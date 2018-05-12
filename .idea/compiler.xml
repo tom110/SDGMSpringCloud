@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="auth-service" />
+        <module name="client_test" />
+        <module name="config" />
+        <module name="gateway" />
+        <module name="monitor" />
+        <module name="registry" />
+        <module name="zipkin" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="auth-service" target="1.8" />
+      <module name="client_test" target="1.8" />
+      <module name="config" target="1.8" />
+      <module name="gateway" target="1.8" />
+      <module name="monitor" target="1.8" />
+      <module name="registry" target="1.8" />
+      <module name="SDGMProject" target="1.8" />
+      <module name="zipkin" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

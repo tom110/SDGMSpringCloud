@@ -1,0 +1,7 @@
+encrypt:
+  key-store:
+    location: classpath:/sdgmkey.keystore
+    password: sdgmskey
+    alias: sdgmkey
+    secret: sdgmskey
+    enable: true

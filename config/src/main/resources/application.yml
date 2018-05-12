@@ -1,0 +1,35 @@
+server:
+  port: 8888
+
+eureka:
+  instance:
+    hostname: registry
+    prefer-ip-address: true
+    metadata-map:
+      user.name: ${security.user.name}
+      user.password: ${security.user.password}
+  client:
+    service-url:
+      defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:password}@registry:8761/eureka/
+
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://tom@123.233.240.222:10101/r/cloud-repo.git
+          search-paths: config-repo
+          username: tom
+          password: litao
+  rabbitmq:
+      host: localhost
+      port: 32771
+      username: user
+      password: password
+
+security:
+  user:
+    name: user
+    password: ${CONFIG_SERVER_PASSWORD:password}
