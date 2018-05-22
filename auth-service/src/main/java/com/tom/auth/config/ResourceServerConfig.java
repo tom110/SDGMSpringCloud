@@ -21,14 +21,33 @@ public class ResourceServerConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         http.requestMatchers()
-                .antMatchers("/login","/swagger-ui.html","/swagger-resources/**","/v2/api-docs", "/oauth/authorize")
+                .antMatchers("/login", "/swagger-ui.html","/swagger-resources/**","/v2/api-docs", "/oauth/authorize")
                 .and()
                 .authorizeRequests()
                 .anyRequest()
-                .authenticated()
+                .authenticated();
+
+        http
+                .authorizeRequests()
+                .antMatchers("/","/fonts/**","/login").permitAll()
                 .and()
                 .formLogin()
-                .permitAll();
+                .loginPage("/login")
+                .usernameParameter("username")
+                .passwordParameter("password")
+                .permitAll()
+                .and()
+                .exceptionHandling()
+                .accessDeniedPage("/403")
+                .and()
+                .logout()
+                .logoutUrl("/logout")
+                .deleteCookies("remember-me")
+                .logoutSuccessUrl("/")
+                .permitAll()
+                .and()
+                .rememberMe();
+
     }
 
 

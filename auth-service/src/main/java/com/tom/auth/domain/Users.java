@@ -10,10 +10,8 @@ public class Users {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id")
     private int id;
-
     @Column(name = "email")
     private String email;
-
     @Column(name = "name")
     private String name;
     @Column(name = "password")
@@ -22,7 +20,6 @@ public class Users {
     private String lastName;
     @Column(name = "active")
     private int active;
-
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "user_role", joinColumns =
     @JoinColumn(name = "user_id"), inverseJoinColumns =

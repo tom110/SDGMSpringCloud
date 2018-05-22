@@ -9,9 +9,10 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "role_id")
     private int roleId;
-
     @Column(name = "role")
     private String role;
+    @Column(name = "rolename")
+    private String roleName;
 
     public Role() {
     }
@@ -30,5 +31,13 @@ public class Role {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 }
