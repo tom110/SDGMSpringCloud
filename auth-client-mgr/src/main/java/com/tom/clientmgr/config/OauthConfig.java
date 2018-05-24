@@ -16,6 +16,8 @@ public class OauthConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/", "/login**","/assets/**","/images/**")
                 .permitAll()
                 .anyRequest()
-                .authenticated();
+                .authenticated()
+                .and()
+                .csrf().disable();
     }
 }

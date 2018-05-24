@@ -12,6 +12,7 @@
 <head th:replace="fragments/meta-css-header :: headerinc">
 
 </head>
+
 <body>
 <!-- Left Panel -->
 
@@ -50,8 +51,11 @@
         </div>
     </div>
 
+
     <div class="content mt-3">
+
         <div class="animated fadeIn">
+
             <div class="row">
 
                 <div class="col-md-12">
@@ -71,21 +75,21 @@
                                             <thead>
                                             <tr>
                                                 <th>id</th>
-                                                <th>name</th>
-                                                <th>lastName</th>
-                                                <th>password</th>
-                                                <th>active</th>
-                                                <th>email</th>
+                                                <th>用户名</th>
+                                                <th>昵称</th>
+                                                <th>密码</th>
+                                                <th>状态</th>
+                                                <th>邮箱</th>
                                             </tr>
                                             </thead>
                                             <tfoot>
                                             <tr>
                                                 <th>id</th>
-                                                <th>name</th>
-                                                <th>lastName</th>
-                                                <th>password</th>
-                                                <th>active</th>
-                                                <th>email</th>
+                                                <th>用户名</th>
+                                                <th>昵称</th>
+                                                <th>密码</th>
+                                                <th>状态</th>
+                                                <th>邮箱</th>
                                             </tr>
                                             </tfoot>
                                         </table>
@@ -98,7 +102,9 @@
                 </div>
 
             </div>
+
         </div><!-- .animated -->
+
     </div>
 
 </div><!-- /#right-panel -->
@@ -123,19 +129,174 @@
 
 
 <script type="text/javascript">
+    var t, changeFlag = false, createFlag = false;
     $(document).ready(function () {
         if ($.fn.dataTable.isDataTable('#bootstrap-data-table')) {
             table = $('#bootstrap-data-table').DataTable();
             table.destroy();
-            $('#bootstrap-data-table').DataTable({
+            t = $('#bootstrap-data-table').DataTable({
                 "ajax": "/ui/getUsers",
+                dom: 'Bfrtip',
+                buttons: [
+                    {extend: 'copy', text: '复制'},
+                    {extend: 'csv', text: 'CSV'},
+                    {extend: 'excel', text: 'Excel'},
+                    {extend: 'pdf', text: 'PDF'},
+                    {extend: 'print', text: '打印'},
+                    {
+                        text: '添加',
+                        action: function (e, dt, node, config) {
+                            if (changeFlag) {
+                                flag = confirm("是否放弃您修改的内容？")
+                                if (flag) {
+                                    addNewRow();
+                                    $("#bootstrap-data-table tbody td").each(function () {
+                                        var v = $(this).children("input:first-child").attr('value');
+                                        $(this).html(v);
+                                        changeFlag = false;
+                                        updateRemoveColor();
+                                    })
+                                }
+                            } else {
+                                addNewRow()
+                            }
+
+                        }
+                    },
+                    {
+                        text: '删除',
+                        action: function (e, dt, node, config) {
+
+                            var deleteIds=new Array();
+                            $("#bootstrap-data-table tbody tr").filter(function () {
+                                return $(this).hasClass('selected')
+                            }).each( function(){
+                                deleteIds.push($(this).find('td:first').text());
+                            })
+                            $.post("/ui/deleteUsers",{
+                                deleteIds:JSON.stringify(deleteIds)
+                            },function(data) {
+                                if(data=='success'){
+                                    alert("删除成功");
+                                    t.ajax.url("/ui/getUsers").load();
+                                }else{
+                                    alert(msg);
+                                }
+                            });
+                        }
+                    },
+                    {
+                        text: '编辑',
+                        action: function (e, dt, node, config) {
+                            if (!createFlag) {
+                                $("#bootstrap-data-table tbody td").each(function () {
+                                    if ($(this).children('input').length == 0) {
+                                        var v = $(this).text();
+                                        $(this).html('<input value="' + v + '"></input>');
+                                        $("#bootstrap-data-table tbody tr").each(function () {
+                                            $(this).removeClass("selected");
+                                        })
+                                        changeFlag = true;
+                                        updateAddCorlor();
+                                    } else {
+                                        var v = $(this).children("input:first-child").attr('value');
+                                        $(this).html(v);
+                                        changeFlag = false;
+                                        updateRemoveColor();
+                                    }
+                                })
+                            } else {
+                                alert("请先提交新增加内容！")
+                            }
+
+                        }
+                    },
+                    {
+                        text: '提交',
+                        action: function (e, dt, node, config) {
+                            var jsonObject = new Object();
+                            jsonObject['type'] = 'create';
+
+                            var dat = new Array();
+                            $("#bootstrap-data-table tbody tr").filter(function () {
+                                return $(this).find('input').length > 0;
+                            }).each(function () {
+                                var o = new Array();
+                                $(this).find('input').each(function () {
+                                    o.push($(this).val());
+                                })
+                                dat.push(o);
+                            });
+                            jsonObject['dat'] = dat;
+
+                            $.post('/ui/createUsers', {
+                                data: JSON.stringify(jsonObject)
+                            }, function (msg) {
+                                if (msg == '插入成功！') {
+                                    t.ajax.url("/ui/getUsers").load();
+                                    alert('创建用户成功！');
+                                    createFlag = false;
+                                } else {
+                                    alert(msg);
+                                }
+                            })
+                        }
+                    },
+                    {
+                        text: '刷新',
+                        action: function (e, dt, node, config) {
+                            t.ajax.url("/ui/getUsers").load();
+                        }
+                    }
+                ],
+                select: true,
+                language: {
+                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Chinese.json"
+                }
             });
         }
         else {
+            alert("hello");
             table = $('#bootstrap-data-table').DataTable({
                 "ajax": "/ui/getUsers",
             });
         }
+
+        $('#bootstrap-data-table tbody').on('click', 'tr', function () {
+            if ($(this).hasClass('selected')) {
+                if (!changeFlag) {
+                    $(this).removeClass('selected');
+                }
+            } else {
+                if (!changeFlag) {
+                    if (!createFlag)
+                        $(this).addClass('selected');
+                }
+            }
+        });
+
+        function updateAddCorlor() {
+            $("span").filter(function () {
+                return $(this).text() == '编辑';
+            }).addClass("selected");
+        }
+
+        function updateRemoveColor() {
+            $("span").filter(function () {
+                return $(this).text() == '编辑';
+            }).removeClass("selected");
+        }
+
+        function addNewRow() {
+            t.row.add(['~`^$73', '~`^$73', '~`^$73', '~`^$73', '~`^$73', '~`^$73']).draw(false);
+            $("td").filter(function () {
+                return $(this).text() == '~`^$73';
+            }).each(function () {
+                $(this).html('<input ></input>');
+            });
+            createFlag = true;
+        }
+
     });
 </script>
 
