@@ -30,6 +30,15 @@ public class Users {
     public Users() {
     }
 
+    public Users(Integer id,String name,String lastName,String password,Integer active,String email){
+        this.id=id;
+        this.active = active;
+        this.email = email;
+        this.lastName =lastName;
+        this.name = name;
+        this.password = password;
+    }
+
     public Users(String name,String lastName,String password,Integer active,String email){
         this.active = active;
         this.email = email;

@@ -46,14 +46,14 @@ public class UsersPermissionController {
         return jsonObject;
     }
 
-    @RequestMapping(value = "/createUsers", method = RequestMethod.POST)
-    public String createUsers(@RequestParam("data") String userInfo) {
+    @RequestMapping(value = "/createOrUpdateUsers", method = RequestMethod.POST)
+    public String createOrUpdateUsers(@RequestParam("data") String userInfo) {
 
         JSONObject jsonObject = null;
         try {
             jsonObject = (JSONObject) (new JSONParser().parse(userInfo));
+            JSONArray jsonArray = (JSONArray) jsonObject.get("dat");
             if (jsonObject.get("type").equals("create")) {
-                JSONArray jsonArray = (JSONArray) jsonObject.get("dat");
                 if (jsonArray.size() > 0) {
                     jsonArray.stream().map(ja -> {
                         JSONArray jsa = (JSONArray) ja;
@@ -65,15 +65,30 @@ public class UsersPermissionController {
                                 jsa.get(5).toString());
                         return users;
                     }).forEach(u -> usersService.saveOrUpdate((Users)u));
-                    return "插入成功！";
+                    return "操作成功！";
+                }else{
+                    return "数据为空！";
+                }
+            }else if(jsonObject.get("type").equals("update")){
+                if (jsonArray.size() > 0) {
+                    jsonArray.stream().map(ja -> {
+                        JSONArray jsa = (JSONArray) ja;
+                        Users users = new Users(
+                                Integer.parseInt(jsa.get(0).toString()),
+                                jsa.get(1).toString(),
+                                jsa.get(2).toString(),
+                                jsa.get(3).toString(),
+                                Integer.parseInt((String) jsa.get(4)),
+                                jsa.get(5).toString());
+                        return users;
+                    }).forEach(u -> usersService.saveOrUpdate((Users)u));
+                    return "操作成功！";
                 }else{
                     return "数据为空！";
                 }
             }else{
-                return "更新成功！";
+                return "后台状态符缺失！";
             }
-
-
         } catch (ParseException e) {
             return "请检查输入数据类型！";
         }catch (Exception e){

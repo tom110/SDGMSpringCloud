@@ -167,22 +167,28 @@
                         text: '删除',
                         action: function (e, dt, node, config) {
 
-                            var deleteIds=new Array();
-                            $("#bootstrap-data-table tbody tr").filter(function () {
+                            var selectedTr=$("#bootstrap-data-table tbody tr").filter(function () {
                                 return $(this).hasClass('selected')
-                            }).each( function(){
-                                deleteIds.push($(this).find('td:first').text());
-                            })
-                            $.post("/ui/deleteUsers",{
-                                deleteIds:JSON.stringify(deleteIds)
-                            },function(data) {
-                                if(data=='success'){
-                                    alert("删除成功");
-                                    t.ajax.url("/ui/getUsers").load();
-                                }else{
-                                    alert(msg);
-                                }
                             });
+
+                            if(selectedTr.length>0){
+                                var deleteIds=new Array();
+                                selectedTr.each( function(){
+                                    deleteIds.push($(this).find('td:first').text());
+                                })
+                                $.post("/ui/deleteUsers",{
+                                    deleteIds:JSON.stringify(deleteIds)
+                                },function(data) {
+                                    if(data=='success'){
+                                        alert("删除成功");
+                                        t.ajax.url("/ui/getUsers").load();
+                                    }else{
+                                        alert(msg);
+                                    }
+                                });
+                            }else{
+                                alert('请选择要删除的行！');
+                            }
                         }
                     },
                     {
@@ -208,14 +214,20 @@
                             } else {
                                 alert("请先提交新增加内容！")
                             }
-
                         }
                     },
                     {
                         text: '提交',
                         action: function (e, dt, node, config) {
                             var jsonObject = new Object();
-                            jsonObject['type'] = 'create';
+                            if(createFlag){
+                                jsonObject['type'] = 'create';
+                            }else if(changeFlag){
+                                jsonObject['type'] = 'update';
+                            }else{
+                                alert('状态符缺失！');
+                                return;
+                            }
 
                             var dat = new Array();
                             $("#bootstrap-data-table tbody tr").filter(function () {
@@ -229,13 +241,15 @@
                             });
                             jsonObject['dat'] = dat;
 
-                            $.post('/ui/createUsers', {
+                            $.post('/ui/createOrUpdateUsers', {
                                 data: JSON.stringify(jsonObject)
                             }, function (msg) {
-                                if (msg == '插入成功！') {
+                                if (msg == '操作成功！') {
                                     t.ajax.url("/ui/getUsers").load();
-                                    alert('创建用户成功！');
+                                    alert(msg);
                                     createFlag = false;
+                                    changeFlag=false;
+                                    updateRemoveColor();
                                 } else {
                                     alert(msg);
                                 }
