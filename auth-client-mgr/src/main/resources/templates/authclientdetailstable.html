@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""/> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang=""/> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang=""/> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang=""/> <!--<![endif]-->
+<head th:replace="fragments/meta-css-header :: headerinc">
+
+</head>
+
+<body>
+<!-- Left Panel -->
+
+<aside id="left-panel" class="left-panel" th:replace="fragments/left-panel :: left-panel">
+
+</aside><!-- /#left-panel -->
+
+<!-- Left Panel -->
+
+<!-- Right Panel -->
+
+<div id="right-panel" class="right-panel">
+
+    <!-- Header-->
+    <header id="header" class="header" th:replace="fragments/right-panel-header :: right-panel-header"></header>
+    <!-- /header -->
+    <!-- Header-->
+    <div class="breadcrumbs">
+        <div class="col-sm-4">
+            <div class="page-header float-left">
+                <div class="page-title">
+                    <h1>管理后台</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="page-header float-right">
+                <div class="page-title">
+                    <ol class="breadcrumb text-right">
+                        <li><a href="#">系统管理</a></li>
+                        <li><a href="#">客户端授权管理</a></li>
+                        <li class="active">客户端配置</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content mt-3">
+
+        <div class="animated fadeIn">
+
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">客户端配置</strong>
+                        </div>
+                        <div class="card-body">
+                            <div id="bootstrap-data-table_wrapper"
+                                 class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer"
+                                style="margin: 0 auto">
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <table id="bootstrap-data-table"
+                                               class="table table-striped table-bordered dataTable no-footer"
+                                               role="grid" aria-describedby="bootstrap-data-table_info">
+                                            <thead>
+                                            <tr>
+                                                <th>client_id</th>
+                                                <th>resource_ids</th>
+                                                <th>client_secret</th>
+                                                <th>scope</th>
+                                                <th>authorized_grant_types</th>
+                                                <th>web_server_redirect_uri</th>
+                                                <th>authorities</th>
+                                                <th>access_token_validity</th>
+                                                <th>refresh_token_validity</th>
+                                                <th>additional_information</th>
+                                                <th>autoapprove</th>
+                                            </tr>
+                                            </thead>
+                                            <!--<tfoot>-->
+                                            <!--<tr>-->
+                                                <!--<th>client_id</th>-->
+                                                <!--<th>resource_ids</th>-->
+                                                <!--<th>client_secret</th>-->
+                                                <!--<th>scope</th>-->
+                                                <!--<th>authorized_grant_types</th>-->
+                                                <!--<th>web_server_redirect_uri</th>-->
+                                                <!--<th>authorities</th>-->
+                                                <!--<th>access_token_validity</th>-->
+                                                <!--<th>refresh_token_validity</th>-->
+                                                <!--<th>additional_information</th>-->
+                                                <!--<th>autoapprove</th>-->
+                                            <!--</tr>-->
+                                            <!--</tfoot>-->
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div><!-- .animated -->
+
+    </div>
+
+</div><!-- /#right-panel -->
+
+<!-- Right Panel -->
+
+<script th:src="@{/assets/js/vendor/jquery-2.1.4.min.js}"></script>
+<script th:src="@{/assets/js/popper.min.js}"></script>
+<script th:src="@{/assets/js/plugins.js}"></script>
+<script th:src="@{/assets/js/main.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/datatables.min.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/dataTables.bootstrap.min.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/dataTables.buttons.min.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/buttons.bootstrap.min.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/jszip.min.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/pdfmake.min.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/vfs_fonts.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/buttons.html5.min.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/buttons.print.min.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/buttons.colVis.min.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/datatables-init.js}"></script>
+
+<script type="text/javascript">
+    var t, changeFlag = false, createFlag = false;
+    $(document).ready(function () {
+        var table_width=window.outerWidth-300;
+        $("#bootstrap-data-table_wrapper").css("width",table_width);
+
+        if ($.fn.dataTable.isDataTable('#bootstrap-data-table')) {
+            table = $('#bootstrap-data-table').DataTable();
+            table.destroy();
+            t = $('#bootstrap-data-table').DataTable({
+                "ajax": "/ui/getOauthClientDetails",
+                "scrollX":true,
+                dom: 'Bfrtip',
+                buttons: [
+                    {extend: 'copy', text: '复制'},
+                    {extend: 'csv', text: 'CSV'},
+                    {extend: 'excel', text: 'Excel'},
+                    {extend: 'pdf', text: 'PDF'},
+                    {extend: 'print', text: '打印'},
+                    {
+                        text: '添加',
+                        action: function (e, dt, node, config) {
+                            if (changeFlag) {
+                                flag = confirm("是否放弃您修改的内容？")
+                                if (flag) {
+                                    addNewRow();
+                                    $("#bootstrap-data-table tbody td").each(function () {
+                                        var v = $(this).children("input:first-child").attr('value');
+                                        $(this).html(v);
+                                        changeFlag = false;
+                                        updateRemoveColor();
+                                    })
+                                }
+                            } else {
+                                addNewRow()
+                            }
+
+                        }
+                    },
+                    {
+                        text: '删除',
+                        action: function (e, dt, node, config) {
+
+                            var selectedTr=$("#bootstrap-data-table tbody tr").filter(function () {
+                                return $(this).hasClass('selected')
+                            });
+
+                            if(selectedTr.length>0){
+                                var deleteIds=new Array();
+                                selectedTr.each( function(){
+                                    deleteIds.push($(this).find('td:first').text());
+                                })
+                                $.post("/ui/deleteOauthClientDetails",{
+                                    deleteIds:JSON.stringify(deleteIds)
+                                },function(data) {
+                                    if(data=='success'){
+                                        alert("删除成功");
+                                        t.ajax.url("/ui/getOauthClientDetails").load();
+                                    }else{
+                                        alert(msg);
+                                    }
+                                });
+                            }else{
+                                alert('请选择要删除的行！');
+                            }
+                        }
+                    },
+                    {
+                        text: '编辑',
+                        action: function (e, dt, node, config) {
+                            if (!createFlag) {
+                                $("#bootstrap-data-table tbody td").each(function () {
+                                    if ($(this).children('input').length == 0) {
+                                        var v = $(this).text();
+                                        $(this).html('<input style="width: 100%" value="' + v + '"></input>');
+                                        $("#bootstrap-data-table tbody tr").each(function () {
+                                            $(this).removeClass("selected");
+                                        })
+                                        changeFlag = true;
+                                        updateAddCorlor();
+                                    } else {
+                                        var v = $(this).children("input:first-child").attr('value');
+                                        $(this).html(v);
+                                        changeFlag = false;
+                                        updateRemoveColor();
+                                    }
+                                })
+                            } else {
+                                alert("请先提交新增加内容！")
+                            }
+                        }
+                    },
+                    {
+                        text: '提交',
+                        action: function (e, dt, node, config) {
+                            var jsonObject = new Object();
+                            if(createFlag){
+                                jsonObject['type'] = 'create';
+                            }else if(changeFlag){
+                                jsonObject['type'] = 'update';
+                            }else{
+                                alert('状态符缺失！');
+                                return;
+                            }
+
+                            var dat = new Array();
+                            $("#bootstrap-data-table tbody tr").filter(function () {
+                                return $(this).find('input').length > 0;
+                            }).each(function () {
+                                var o = new Array();
+                                $(this).find('input').each(function () {
+                                    o.push($(this).val());
+                                })
+                                dat.push(o);
+                            });
+                            jsonObject['dat'] = dat;
+
+                            $.post('/ui/createOrUpdateOauthClientDetails', {
+                                data: JSON.stringify(jsonObject)
+                            }, function (msg) {
+                                if (msg == '操作成功！') {
+                                    t.ajax.url("/ui/getOauthClientDetails").load();
+                                    alert(msg);
+                                    createFlag = false;
+                                    changeFlag=false;
+                                    updateRemoveColor();
+                                } else {
+                                    alert(msg);
+                                }
+                            })
+                        }
+                    },
+                    {
+                        text: '刷新',
+                        action: function (e, dt, node, config) {
+                            t.ajax.url("/ui/getOauthClientDetails").load();
+                        }
+                    }
+                ],
+                select: true,
+                language: {
+                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Chinese.json"
+                }
+            });
+        }
+        else {
+            table = $('#bootstrap-data-table').DataTable({
+                "scrollX": true,
+                "ajax": "/ui/getOauthClientDetails",
+            });
+        }
+
+        $('#bootstrap-data-table tbody').on('click', 'tr', function () {
+            if ($(this).hasClass('selected')) {
+                if (!changeFlag) {
+                    $(this).removeClass('selected');
+                }
+            } else {
+                if (!changeFlag) {
+                    if (!createFlag)
+                        $(this).addClass('selected');
+                }
+            }
+        });
+
+        function updateAddCorlor() {
+            $("span").filter(function () {
+                return $(this).text() == '编辑';
+            }).addClass("selected");
+        }
+
+        function updateRemoveColor() {
+            $("span").filter(function () {
+                return $(this).text() == '编辑';
+            }).removeClass("selected");
+        }
+
+        function addNewRow() {
+            var newTr="<tr>"+
+                "<td>~`^$73</td>" +
+                "<td>~`^$73</td>" +
+                "<td>~`^$73</td>" +
+                "<td>~`^$73</td>" +
+                "<td>~`^$73</td>" +
+                "<td>~`^$73</td>" +
+                "<td>~`^$73</td>" +
+                "<td>~`^$73</td>" +
+                "<td>~`^$73</td>" +
+                "<td>~`^$73</td>" +
+                "<td>~`^$73</td>" +
+                "</tr>";
+            $("#bootstrap-data-table tbody").prepend(newTr);
+            $("td").filter(function () {
+                return $(this).text() == '~`^$73';
+            }).each(function () {
+                $(this).html('<input style="width: 100%"></input>');
+            });
+            createFlag = true;
+        }
+
+    });
+</script>
+
+</body>
+</html>

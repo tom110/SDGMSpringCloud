@@ -1,6 +1,7 @@
 package com.tom.auth.domain;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -9,25 +10,44 @@ public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id")
-    private int id;
+    private Integer id;
     @Column(name = "email")
     private String email;
-    @Column(name = "name")
+    @Column(name = "name",unique = true,nullable = false)
     private String name;
     @Column(name = "password")
     private String password;
     @Column(name = "last_name")
     private String lastName;
     @Column(name = "active")
-    private int active;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Integer active;
+
+    @ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     @JoinTable(name = "user_role", joinColumns =
     @JoinColumn(name = "user_id"), inverseJoinColumns =
     @JoinColumn(name = "role_id"))
-    private Set<Role> roles;
+    private List<Role> roles;
+
 
 
     public Users() {
+    }
+
+    public Users(Integer id,String name,String lastName,String password,Integer active,String email){
+        this.id=id;
+        this.active = active;
+        this.email = email;
+        this.lastName =lastName;
+        this.name = name;
+        this.password = password;
+    }
+
+    public Users(String name,String lastName,String password,Integer active,String email){
+        this.active = active;
+        this.email = email;
+        this.lastName =lastName;
+        this.name = name;
+        this.password = password;
     }
 
     public Users(Users users) {
@@ -43,11 +63,11 @@ public class Users {
     }
 
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -83,19 +103,19 @@ public class Users {
         this.lastName = lastName;
     }
 
-    public int getActive() {
+    public Integer getActive() {
         return active;
     }
 
-    public void setActive(int active) {
+    public void setActive(Integer active) {
         this.active = active;
     }
 
-    public Set<Role> getRoles() {
+    public List<Role> getRoles() {
         return roles;
     }
 
-    public void setRoles(Set<Role> roles) {
+    public void setRoles(List<Role> roles) {
         this.roles = roles;
     }
 }

@@ -1,6 +1,7 @@
 package com.tom.auth;
 import com.tom.auth.domain.Role;
 import com.tom.auth.domain.Users;
+import com.tom.auth.repository.RoleRepository;
 import com.tom.auth.repository.UsersRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,7 +10,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @RunWith(SpringRunner.class)
@@ -18,6 +21,8 @@ public class FillUser {
 
     @Autowired
     private UsersRepository usersRepository;
+    @Autowired
+    private RoleRepository roleRepository;
 
     @Test
     public void test(){
@@ -29,7 +34,9 @@ public class FillUser {
         users.setLastName("tom");
         Role role=new Role();
         role.setRole("admin");
-        Set<Role> roles=new HashSet<Role>();
+        role.setParentId(0);
+        role= roleRepository.save(role);
+        List<Role> roles=new ArrayList<>();
         roles.add(role);
         users.setRoles(roles);
         usersRepository.save(users);

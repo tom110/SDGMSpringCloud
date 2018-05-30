@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""/> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang=""/> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang=""/> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang=""/> <!--<![endif]-->
+<head th:replace="fragments/meta-css-header :: headerinc">
+
+</head>
+
+<body>
+<!-- Left Panel -->
+
+<aside id="left-panel" class="left-panel" th:replace="fragments/left-panel :: left-panel">
+
+</aside><!-- /#left-panel -->
+
+<!-- Left Panel -->
+
+<!-- Right Panel -->
+
+<div id="right-panel" class="right-panel">
+
+    <!-- Header-->
+    <header id="header" class="header" th:replace="fragments/right-panel-header :: right-panel-header"></header>
+    <!-- /header -->
+    <!-- Header-->
+    <div class="breadcrumbs">
+        <div class="col-sm-4">
+            <div class="page-header float-left">
+                <div class="page-title">
+                    <h1>管理后台</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="page-header float-right">
+                <div class="page-title">
+                    <ol class="breadcrumb text-right">
+                        <li><a href="#">系统管理</a></li>
+                        <li><a href="#">用户权限管理</a></li>
+                        <li class="active">角色管理</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content mt-3">
+
+        <div class="animated fadeIn">
+
+            <div class="row">
+
+                <div class="col-md-12" id="server" style="display: none">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">角色绑定-请选择绑定并点击“绑定”确认！</strong>
+                        </div>
+                        <div class="card-body">
+                            <div id="bootstrap-data-table_wrapper_"
+                                 class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <table id="bootstrap-data-table_"
+                                               class="table table-striped table-bordered dataTable no-footer"
+                                               role="grid" aria-describedby="bootstrap-data-table_info">
+                                            <thead>
+                                            <tr>
+                                                <th>id</th>
+                                                <th>权限名</th>
+                                                <th>权限别名</th>
+                                                <th>权限层id</th>
+                                            </tr>
+                                            </thead>
+                                            <tfoot>
+                                            <tr>
+                                                <th>id</th>
+                                                <th>权限名</th>
+                                                <th>权限别名</th>
+                                                <th>权限层id</th>
+                                            </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12" id="client">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">角色管理</strong>
+                        </div>
+                        <div class="card-body">
+                            <div id="bootstrap-data-table_wrapper"
+                                 class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <table id="bootstrap-data-table"
+                                               class="table table-striped table-bordered dataTable no-footer"
+                                               role="grid" aria-describedby="bootstrap-data-table_info">
+                                            <thead>
+                                            <tr>
+                                                <th>id</th>
+                                                <th>角色名</th>
+                                                <th>角色别名</th>
+                                                <th>角色层id</th>
+                                            </tr>
+                                            </thead>
+                                            <tfoot>
+                                            <tr>
+                                                <th>id</th>
+                                                <th>角色名</th>
+                                                <th>角色别名</th>
+                                                <th>角色层id</th>
+                                            </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div><!-- .animated -->
+
+    </div>
+
+</div><!-- /#right-panel -->
+
+<!-- Right Panel -->
+
+<script th:src="@{/assets/js/vendor/jquery-2.1.4.min.js}"></script>
+<script th:src="@{/assets/js/popper.min.js}"></script>
+<script th:src="@{/assets/js/plugins.js}"></script>
+<script th:src="@{/assets/js/main.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/datatables.min.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/dataTables.bootstrap.min.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/dataTables.buttons.min.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/buttons.bootstrap.min.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/jszip.min.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/pdfmake.min.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/vfs_fonts.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/buttons.html5.min.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/buttons.print.min.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/buttons.colVis.min.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/datatables-init.js}"></script>
+
+<script type="text/javascript">
+    var t, server, changeFlag = false, createFlag = false;
+    $(document).ready(function () {
+        if ($.fn.dataTable.isDataTable('#bootstrap-data-table')) {
+            table = $('#bootstrap-data-table').DataTable();
+            table.destroy();
+            t = $('#bootstrap-data-table').DataTable({
+                "ajax": "/ui/getRoles",
+                dom: 'Bfrtip',
+                buttons: [
+                    {extend: 'copy', text: '复制'},
+                    {extend: 'csv', text: 'CSV'},
+                    {extend: 'excel', text: 'Excel'},
+                    {extend: 'pdf', text: 'PDF'},
+                    {extend: 'print', text: '打印'},
+                    {
+                        text: '添加',
+                        action: function (e, dt, node, config) {
+                            if (changeFlag) {
+                                flag = confirm("是否放弃您修改的内容？")
+                                if (flag) {
+                                    addNewRow();
+                                    $("#bootstrap-data-table tbody td").each(function () {
+                                        var v = $(this).children("input:first-child").attr('value');
+                                        $(this).html(v);
+                                        changeFlag = false;
+                                        updateRemoveColor();
+                                    })
+                                }
+                            } else {
+                                addNewRow()
+                            }
+
+                        }
+                    },
+                    {
+                        text: '删除',
+                        action: function (e, dt, node, config) {
+
+                            var selectedTr = $("#bootstrap-data-table tbody tr").filter(function () {
+                                return $(this).hasClass('selected')
+                            });
+
+                            if (selectedTr.length > 0) {
+                                var deleteIds = new Array();
+                                selectedTr.each(function () {
+                                    deleteIds.push($(this).find('td:first').text());
+                                })
+                                $.post("/ui/deleteRoles", {
+                                    deleteIds: JSON.stringify(deleteIds)
+                                }, function (data) {
+                                    if (data == 'success') {
+                                        alert("删除成功");
+                                        t.ajax.url("/ui/getRoles").load();
+                                    } else {
+                                        alert(msg);
+                                    }
+                                });
+                            } else {
+                                alert('请选择要删除的行！');
+                            }
+                        }
+                    },
+                    {
+                        text: '编辑',
+                        action: function (e, dt, node, config) {
+                            if (!createFlag) {
+                                $("#bootstrap-data-table tbody td").each(function () {
+                                    if ($(this).children('input').length == 0) {
+                                        var v = $(this).text();
+                                        $(this).html('<input value="' + v + '"></input>');
+                                        $("#bootstrap-data-table tbody tr").each(function () {
+                                            $(this).removeClass("selected");
+                                        })
+                                        changeFlag = true;
+                                        updateAddCorlor();
+                                    } else {
+                                        var v = $(this).children("input:first-child").attr('value');
+                                        $(this).html(v);
+                                        changeFlag = false;
+                                        updateRemoveColor();
+                                    }
+                                })
+                            } else {
+                                alert("请先提交新增加内容！")
+                            }
+                        }
+                    },
+                    {
+                        text: '提交',
+                        action: function (e, dt, node, config) {
+                            var jsonObject = new Object();
+                            if (createFlag) {
+                                jsonObject['type'] = 'create';
+                            } else if (changeFlag) {
+                                jsonObject['type'] = 'update';
+                            } else {
+                                alert('状态符缺失！');
+                                return;
+                            }
+
+                            var dat = new Array();
+                            $("#bootstrap-data-table tbody tr").filter(function () {
+                                return $(this).find('input').length > 0;
+                            }).each(function () {
+                                var o = new Array();
+                                $(this).find('input').each(function () {
+                                    o.push($(this).val());
+                                })
+                                dat.push(o);
+                            });
+                            jsonObject['dat'] = dat;
+
+                            $.post('/ui/createOrUpdateRoles', {
+                                data: JSON.stringify(jsonObject)
+                            }, function (msg) {
+                                if (msg == '操作成功！') {
+                                    t.ajax.url("/ui/getRoles").load();
+                                    alert(msg);
+                                    createFlag = false;
+                                    changeFlag = false;
+                                    updateRemoveColor();
+                                } else {
+                                    alert(msg);
+                                }
+                            })
+                        }
+                    },
+                    {
+                        text: '刷新',
+                        action: function (e, dt, node, config) {
+                            t.ajax.url("/ui/getRoles").load();
+                        }
+                    },
+                    {
+                        "text": '权限绑定',
+                        action: function (e, dt, node, config) {
+
+                            var selectedTr = $("#bootstrap-data-table tbody tr").filter(function () {
+                                return $(this).hasClass('selected')
+                            });
+
+                            if (selectedTr.length == 1) {
+                                if ($.fn.dataTable.isDataTable('#bootstrap-data-table_')) {
+                                    showServer();
+                                    var selectedId = selectedTr.children("td:eq(0)").text();
+                                    addSelectedTrForServer(selectedId);
+                                } else {
+                                    initServer();
+                                    showServer();
+                                    var selectedId = selectedTr.children("td:eq(0)").text();
+                                    addSelectedTrForServer(selectedId);
+                                }
+                            } else {
+                                alert("请选择一行后进行绑定操作！");
+                                return;
+                            }
+                        }
+                    }
+                ],
+                select: true,
+                language: {
+                    "url": "/ui/css/Chinese.json"
+                }
+            });
+
+            initServer();
+
+        }
+        else {
+            alert("hello");
+            table = $('#bootstrap-data-table').DataTable({
+                "ajax": "/ui/getRoles",
+            });
+        }
+
+        $('#bootstrap-data-table tbody').on('click', 'tr', function () {
+            if ($(this).hasClass('selected')) {
+                if (!changeFlag) {
+                    $(this).removeClass('selected');
+                }
+            } else {
+                if (!changeFlag) {
+                    if (!createFlag)
+                        $(this).addClass('selected');
+                }
+            }
+        });
+        $('#bootstrap-data-table_ tbody').on('click', 'tr', function () {
+            if ($(this).hasClass('selected')) {
+                $(this).removeClass('selected');
+            } else {
+                $(this).addClass('selected');
+            }
+        });
+
+        function updateAddCorlor() {
+            $("span").filter(function () {
+                return $(this).text() == '编辑';
+            }).addClass("selected");
+        }
+
+        function updateRemoveColor() {
+            $("span").filter(function () {
+                return $(this).text() == '编辑';
+            }).removeClass("selected");
+        }
+
+        function addNewRow() {
+            var newTr = "<tr>" +
+                "<td>~`^$73</td>" +
+                "<td>~`^$73</td>" +
+                "<td>~`^$73</td>" +
+                "<td>~`^$73</td>" +
+                "<td>~`^$73</td>" +
+                "<td>~`^$73</td>" +
+                "</tr>";
+            $("#bootstrap-data-table tbody").prepend(newTr);
+            $("td").filter(function () {
+                return $(this).text() == '~`^$73';
+            }).each(function () {
+                $(this).html('<input ></input>');
+            });
+            createFlag = true;
+        }
+
+        function hideServer() {
+            $("#server").css("display", "none");
+            $("#client").css("display", "block");
+        }
+
+        function showServer() {
+            $("#server").css("display", "block");
+            $("#client").css("display", "none");
+        }
+
+        function addSelectedTrForServer(selectedId) {
+            $.post("/ui/getAuthoritiesByRoleId/" + selectedId, function (roleIds) {
+                var trs = $("#bootstrap-data-table_ tbody tr");
+                trs.removeClass("selected");
+                roleIds = roleIds.toString().split(',');
+
+                console.log(roleIds);
+
+                trs.filter(function () {
+                    return roleIds.indexOf($(this).children("td:eq(0)").text()) >= 0;
+                }).addClass("selected");
+
+
+            })
+        }
+
+        function initServer() {
+            server = $("#bootstrap-data-table_").dataTable({
+                "ajax": "/ui/getAuthorities",
+                language: {
+                    "url": "/ui/css/Chinese.json"
+                },
+                paging: false,
+                dom: 'Bfrtip_',
+                buttons: [
+                    {
+                        'text': '绑定',
+                        action: function (e, dt, node, config) {
+
+                            var selectedBindId = $("#bootstrap-data-table tbody tr").filter(function () {
+                                return $(this).hasClass('selected')
+                            }).find('td:first').text();
+
+                            var selectedTr = $("#bootstrap-data-table_ tbody tr").filter(function () {
+                                return $(this).hasClass('selected')
+                            })
+
+                            var bindRoles = new Array();
+                            selectedTr.each(function () {
+                                bindRoles.push($(this).find('td:first').text());
+                            })
+
+                            $.post("/ui/roleBindAuthorities/" + selectedBindId,
+                                {
+                                    authoritiesIds: JSON.stringify(bindRoles)
+                                }, function (msg) {
+                                    if (msg == '绑定成功') {
+                                        alert(msg);
+                                    } else {
+                                        alert(msg);
+                                    }
+                                }
+                            );
+                            hideServer();
+                        }
+                    },
+                    {"text":'取消',action: function (e, dt, node, config) {
+                            hideServer();
+                        }
+                    }
+                ]
+            });
+        }
+    });
+</script>
+
+</body>
+</html>
