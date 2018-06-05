@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+
+</head>
+<body>
+<!-- Left Panel -->
+
+<aside id="left-panel" class="left-panel" th:fragment="left-panel">
+    <nav class="navbar navbar-expand-sm navbar-default">
+
+        <div class="navbar-header">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="/ui"><img th:src="@{/images/logo.png}" alt="Logo" /></a>
+            <a class="navbar-brand hidden" href="/ui"><img th:src="@{/images/logo2.png}" alt="Logo" /></a>
+        </div>
+
+        <div id="main-menu" class="main-menu collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="http://monitor:8040"> <i class="menu-icon fa fa-dashboard"></i>监控面板 </a>
+                </li>
+                <h3 class="menu-title">系统管理</h3><!-- /.menu-title -->
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-male"></i>用户权限管理</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-user"></i><a th:href="@{'http://'+${authClientMgrHostname}+':'+${authClientMgrPort}+${authClientMgrContextPath}+'/pages/usertable'}">用户管理</a></li>
+                        <li><i class="fa fa-id-badge"></i><a th:href="@{'http://'+${authClientMgrHostname}+':'+${authClientMgrPort}+${authClientMgrContextPath}+'/pages/roletable'}">角色管理</a></li>
+                        <li><i class="fa fa-tags"></i><a th:href="@{'http://'+${authClientMgrHostname}+':'+${authClientMgrPort}+${authClientMgrContextPath}+'/pages/authtable'}">权限管理</a></li>
+                        <li><i class="fa fa-users"></i><a href="ui-social-buttons.html">部门管理</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-sitemap"></i>客户端授权管理</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-laptop"></i><a th:href="@{'http://'+${authClientMgrHostname}+':'+${authClientMgrPort}+${authClientMgrContextPath}+'/pages/authclientdetailstable'}">客户端配置</a></li>
+                        <li><i class="fa fa-unlock"></i><a th:href="@{'http://'+${authServiceHostname}+':'+${authServicePort}+${authServiceContextPath}+'/oauth/exit'}">安全退出</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+</aside><!-- /#left-panel -->
+
+<!-- Left Panel -->
+
+</body>
+</html>

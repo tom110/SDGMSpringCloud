@@ -21,15 +21,12 @@ public class ResourceServerConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         http.requestMatchers()
-                .antMatchers("/login", "/swagger-ui.html","/swagger-resources/**","/v2/api-docs", "/oauth/authorize")
+                .antMatchers("/","/login", "/swagger-ui.html","/swagger-resources/**","/v2/api-docs", "/oauth/authorize","/oauth/exit","/assets/**")
                 .and()
                 .authorizeRequests()
+                .antMatchers("/","/fonts/**","/login","/webjars/**","/images/**","/assets/**").permitAll()
                 .anyRequest()
-                .authenticated();
-
-        http
-                .authorizeRequests()
-                .antMatchers("/","/fonts/**","/login").permitAll()
+                .authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login")
@@ -41,13 +38,13 @@ public class ResourceServerConfig extends WebSecurityConfigurerAdapter {
                 .accessDeniedPage("/403")
                 .and()
                 .logout()
-                .logoutUrl("/logout")
+                .logoutUrl("/uaa/logout")
+                .logoutSuccessUrl("/uaa")
                 .deleteCookies("remember-me")
                 .logoutSuccessUrl("/")
                 .permitAll()
                 .and()
                 .rememberMe();
-
     }
 
 

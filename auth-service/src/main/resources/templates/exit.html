@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="" /> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="" /> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="" /> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="" /> <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Sufee Admin - HTML5 Admin Template</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="apple-touch-icon" href="apple-icon.png" />
+    <link rel="shortcut icon" href="favicon.ico" />
+
+    <link rel="stylesheet" th:href="@{/assets/css/normalize.css}" />
+    <link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/assets/css/font-awesome.min.css}" />
+    <link rel="stylesheet" th:href="@{/assets/css/themify-icons.css}" />
+    <link rel="stylesheet" th:href="@{/assets/css/flag-icon.min.css}" />
+    <link rel="stylesheet" th:href="@{/assets/css/cs-skin-elastic.css}" />
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
+    <link rel="stylesheet" th:href="@{/assets/scss/style.css}" />
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css' />
+
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+</head>
+<body>
+<!-- Left Panel -->
+
+<aside id="left-panel" class="left-panel" th:replace="fragments/left-panel :: left-panel">
+
+</aside><!-- /#left-panel -->
+
+<!-- Left Panel -->
+
+<!-- Right Panel -->
+
+<div id="right-panel" class="right-panel">
+
+    <!-- Header-->
+    <header id="header" class="header" th:replace="fragments/right-panel-header :: right-panel-header"></header>
+    <!-- Header-->
+
+    <div class="breadcrumbs">
+        <div class="col-sm-4">
+            <div class="page-header float-left">
+                <div class="page-title">
+                    <h1>管理后台</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="page-header float-right">
+                <div class="page-title">
+                    <ol class="breadcrumb text-right">
+                        <li><a href="#">管理面板</a></li>
+                        <li><a href="#">系统列表</a></li>
+                        <li class="active">系统列表</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content mt-3">
+        <div class="animated fadeIn">
+            <div class="row">
+
+
+                <div class="col-md-4">
+                    <aside class="profile-nav alt">
+                        <section class="card">
+                            <div class="card-header user-header alt bg-dark">
+                                <div class="media">
+                                    <a href="#">
+                                        <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="images/admin.jpg" />
+                                    </a>
+                                    <div class="media-body">
+                                        <h2 class="text-light display-6">安全管理系统</h2>
+                                        <p>上报系统</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <a href="#"> <i class="fa fa-envelope-o"></i> 邮箱 <span class="badge badge-primary pull-right">10</span></a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="#"> <i class="fa fa-tasks"></i> 最近任务 <span class="badge badge-danger pull-right">15</span></a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="#"> <i class="fa fa-bell-o"></i> 告警 <span class="badge badge-success pull-right">11</span></a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="#"> <i class="fa fa-comments-o"></i> 消息 <span class="badge badge-warning pull-right r-activity">03</span></a>
+                                </li>
+                            </ul>
+
+                        </section>
+                    </aside>
+                </div>
+
+
+
+            </div><!-- .row -->
+        </div><!-- .animated -->
+    </div><!-- .content -->
+
+
+</div><!-- /#right-panel -->
+
+<!-- Right Panel -->
+
+<script th:src="@{/assets/js/vendor/jquery-2.1.4.min.js}"></script>
+<script th:src="@{/assets/js/popper.min.js}"></script>
+<script th:src="@{/assets/js/plugins.js}"></script>
+<script th:src="@{/assets/js/main.js}"></script>
+
+</body>
+</html>

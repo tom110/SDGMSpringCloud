@@ -166,7 +166,6 @@
 <script th:src="@{/assets/js/lib/data-table/buttons.colVis.min.js}"></script>
 <script th:src="@{/assets/js/lib/data-table/datatables-init.js}"></script>
 
-
 <script type="text/javascript">
     var t, server, changeFlag = false, createFlag = false;
     $(document).ready(function () {
@@ -237,7 +236,7 @@
                                 $("#bootstrap-data-table tbody td").each(function () {
                                     if ($(this).children('input').length == 0) {
                                         var v = $(this).text();
-                                        $(this).html('<input value="' + v + '"></input>');
+                                        $(this).html('<input type="width:100%" value="' + v + '"></input>');
                                         $("#bootstrap-data-table tbody tr").each(function () {
                                             $(this).removeClass("selected");
                                         })

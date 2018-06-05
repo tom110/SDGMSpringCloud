@@ -21,7 +21,6 @@ public class OauthConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .logout()
                 .logoutUrl("/logout")
-                .logoutSuccessUrl("http://localhost:5000/uaa/oauth/exit")
                 .deleteCookies("remember-me");
     }
 }

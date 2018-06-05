@@ -27,16 +27,18 @@
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-male"></i>用户权限管理</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-user"></i><a th:href="@{/pages/usertable}">用户管理</a></li>
-                        <li><i class="fa fa-id-badge"></i><a th:href="@{/pages/roletable}">角色管理</a></li>
-                        <li><i class="fa fa-tags"></i><a th:href="@{/pages/authtable}">权限管理</a></li>
+                        <li><i class="fa fa-user"></i><a th:href="@{'http://'+${authClientMgrHostname}+':'+${authClientMgrPort}+${authClientMgrContextPath}+'/pages/usertable'}">用户管理</a></li>
+                        <li><i class="fa fa-id-badge"></i><a th:href="@{'http://'+${authClientMgrHostname}+':'+${authClientMgrPort}+${authClientMgrContextPath}+'/pages/roletable'}">角色管理</a></li>
+                        <li><i class="fa fa-tags"></i><a th:href="@{'http://'+${authClientMgrHostname}+':'+${authClientMgrPort}+${authClientMgrContextPath}+'/pages/authtable'}">权限管理</a></li>
                         <li><i class="fa fa-users"></i><a href="ui-social-buttons.html">部门管理</a></li>
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-sitemap"></i>客户端授权管理</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-laptop"></i><a th:href="@{/pages/authclientdetailstable}">客户端配置</a></li>
+                        <li><i class="fa fa-laptop"></i><a th:href="@{'http://'+${authClientMgrHostname}+':'+${authClientMgrPort}+${authClientMgrContextPath}+'/pages/authclientdetailstable'}">客户端配置</a></li>
+                        <li><i class="fa fa-wrench"></i><a th:href="@{'http://'+${authClientMgrHostname}+':'+${authClientMgrPort}+${authClientMgrContextPath}+'/pages/authtools'}">集群工具</a></li>
+                        <li><i class="fa fa-unlock"></i><a th:href="@{'http://'+${authServiceHostname}+':'+${authServicePort}+${authServiceContextPath}+'/oauth/exit'}">安全退出</a></li>
                     </ul>
                 </li>
             </ul>

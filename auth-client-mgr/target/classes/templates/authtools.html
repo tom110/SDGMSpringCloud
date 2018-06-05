@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""/> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang=""/> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang=""/> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang=""/> <!--<![endif]-->
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Sufee Admin - HTML5 Admin Template</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="apple-touch-icon" href="apple-icon.png"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+
+    <link rel="stylesheet" th:href="@{/assets/css/normalize.css}"/>
+    <link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/assets/css/font-awesome.min.css}"/>
+    <link rel="stylesheet" th:href="@{/assets/css/themify-icons.css}"/>
+    <link rel="stylesheet" th:href="@{/assets/css/flag-icon.min.css}"/>
+    <link rel="stylesheet" th:href="@{/assets/css/cs-skin-elastic.css}"/>
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
+    <link rel="stylesheet" th:href="@{/assets/scss/style.css}"/>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'/>
+
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+</head>
+<body>
+<!-- Left Panel -->
+
+<aside id="left-panel" class="left-panel" th:replace="fragments/left-panel :: left-panel">
+
+</aside><!-- /#left-panel -->
+
+<!-- Left Panel -->
+
+<!-- Right Panel -->
+
+<div id="right-panel" class="right-panel">
+
+    <!-- Header-->
+    <header id="header" class="header" th:replace="fragments/right-panel-header :: right-panel-header"></header>
+    <!-- Header-->
+
+    <div class="breadcrumbs">
+        <div class="col-sm-4">
+            <div class="page-header float-left">
+                <div class="page-title">
+                    <h1>管理后台</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="page-header float-right">
+                <div class="page-title">
+                    <ol class="breadcrumb text-right">
+                        <li><a href="#">系统管理</a></li>
+                        <li><a href="#">客户端授权管理</a></li>
+                        <li class="active">集群工具</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content mt-3">
+        <div class="animated fadeIn">
+            <div class="row">
+
+                <div class="col-md-4">
+                    <section class="card">
+                        <div class="twt-feed blue-bg">
+                            <div class="corner-ribon black-ribon">
+                                <i class="fa fa-twitter"></i>
+                            </div>
+                            <div class="fa fa-twitter wtt-mark"></div>
+
+                            <div class="media">
+                                <a href="#">
+                                    <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;"
+                                         alt="" src="images/admin.jpg"/>
+                                </a>
+                                <div class="media-body">
+                                    <h2 class="text-white display-6">加密工具</h2>
+                                    <p class="text-light">为集群配置中心提供加密服务</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="weather-category twt-category">
+                            <ul style="max-width: 400px">
+                                <h4 id="encryptResult"></h4>
+                            </ul>
+                        </div>
+                        <div class="twt-write col-sm-12">
+                            <textarea id="encryptText" placeholder="输入要加密字符" rows="1"
+                                      class="form-control t-text-area"></textarea>
+                        </div>
+                        <footer class="twt-footer">
+                            <a onclick="encrypt()"><i class="fa fa-keyboard-o"></i></a>
+                            <a onclick="encrypt()"><i class="fa fa-chain (alias)"></i></a>
+                            非对称加密
+                            <span class="pull-right">
+                                    RSA
+                                </span>
+                        </footer>
+                    </section>
+                </div>
+
+                <div class="col-md-4">
+                    <section class="card">
+                        <div class="twt-feed blue-bg">
+                            <div class="corner-ribon black-ribon">
+                                <i class="fa fa-twitter"></i>
+                            </div>
+                            <div class="fa fa-twitter wtt-mark"></div>
+
+                            <div class="media">
+                                <a href="#">
+                                    <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;"
+                                         alt="" src="images/admin.jpg"/>
+                                </a>
+                                <div class="media-body">
+                                    <h2 class="text-white display-6">解密工具</h2>
+                                    <p class="text-light">为集群配置中心提供解密服务</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="weather-category twt-category">
+                            <ul style="max-width: 400px">
+                                <h4 id="decryptResult"></h4>
+                            </ul>
+                        </div>
+                        <div class="twt-write col-sm-12">
+                            <textarea id="decryptText" placeholder="输入要解密字符" rows="1"
+                                      class="form-control t-text-area"></textarea>
+                        </div>
+                        <footer class="twt-footer">
+                            <a onclick="decrypt()"><i class="fa fa-keyboard-o"></i></a>
+                            <a onclick="decrypt()"><i class="fa fa-chain (alias)"></i></a>
+                            非对称加密
+                            <span class="pull-right">
+                                    RSA
+                                </span>
+                        </footer>
+                    </section>
+                </div>
+
+                <div class="col-md-4">
+                    <aside class="profile-nav alt">
+                        <section class="card">
+                            <div class="card-header user-header alt bg-dark">
+                                <div class="media">
+                                    <a href="#">
+                                        <img class="align-self-center rounded-circle mr-3"
+                                             style="width:85px; height:85px;" alt="" src="images/admin.jpg"/>
+                                    </a>
+                                    <div class="media-body">
+                                        <h2 class="text-light display-6">网关查看工具</h2>
+                                        <p>网关配置列表</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <ul id="routes" class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <a href="#"> <i class="fa fa-link"></i> Notification <span
+                                            class="badge badge-success pull-right">OK</span></a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="#"> <i class="fa fa-link"></i> Notification <span
+                                            class="badge badge-success pull-right">OK</span></a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="#"> <i class="fa fa-link"></i> Notification <span
+                                            class="badge badge-success pull-right">OK</span></a>
+                                </li>
+                            </ul>
+
+                        </section>
+                    </aside>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="feed-box text-center">
+                        <section class="card">
+                            <div class="card-body">
+                                <div class="corner-ribon blue-ribon">
+                                    <i class="fa fa-twitter"></i>
+                                </div>
+                                <a href="#">
+                                    <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;"
+                                         alt="" src="images/admin.jpg"/>
+                                </a>
+                                <h2>配置中心刷新工具</h2>
+                                <p><a onclick="getYml()">获取配置文件信息 </a><a href="#"><input id="projectName"
+                                                                                         class="form-control"
+                                                                                         type="text"
+                                                                                         placeholder="请输入要查询的项目名"/></a>
+                                    - 刷新 <a href="#" onclick="refresh()">http://config:5000/refresh</a></p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title" id="projectNameShow">Card with switch</strong>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text" id="projectNameContent"></p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div><!-- .row -->
+        </div><!-- .animated -->
+    </div><!-- .content -->
+
+
+</div><!-- /#right-panel -->
+
+<!-- Right Panel -->
+
+<script th:src="@{/assets/js/vendor/jquery-2.1.4.min.js}"></script>
+<script th:src="@{/assets/js/popper.min.js}"></script>
+<script th:src="@{/assets/js/plugins.js}"></script>
+<script th:src="@{/assets/js/main.js}"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        jQuery.get("/ui/getRoutes",function(data){
+            var json= JSON.parse(data);
+            jQuery("#routes").children("li").remove();
+            jQuery.each(json,function(key,value){
+                var li='<li class="list-group-item"><a href="#"> <i class="fa fa-link"></i> '+value+' <span class="badge badge-success pull-right">'+key+'</span></a></li>';
+                jQuery("#routes").append(li)
+            })
+        })
+    })
+
+    function encrypt() {
+        var str = jQuery("#encryptText").val();
+        jQuery.post("/ui/encrypt",
+            {
+                encrypt: str
+            }, function (data) {
+                jQuery("#encryptResult").text(data);
+            })
+    }
+
+    function decrypt() {
+        var str = jQuery("#decryptText").val();
+        jQuery.post("/ui/decrypt",
+            {
+                decrypt: str
+            }, function (data) {
+                jQuery("#decryptResult").text(data);
+            })
+    }
+
+    function refresh() {
+        var projectName = jQuery("#projectName").val()
+        jQuery.get("/ui/refresh", function (data) {
+            alert("刷新成功");
+        })
+    }
+
+    function getYml() {
+        jQuery.get("/ui/getYml", {
+            projectName: projectName
+        }, function (data) {
+            jQuery("#projectNameShow").text(projectName);
+            jQuery("#projectNameContent").text(data);
+        })
+    }
+
+
+</script>
+
+</body>
+</html>
