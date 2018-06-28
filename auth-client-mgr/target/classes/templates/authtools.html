@@ -205,10 +205,15 @@
                                 </a>
                                 <h2>配置中心刷新工具</h2>
                                 <p><a onclick="getYml()">获取配置文件信息 </a><a><input id="projectName"
-                                                                                         class="form-control"
-                                                                                         type="text"
-                                                                                         placeholder="请输入要查询的项目名"/></a>
-                                    - 刷新 <a onclick="refresh()">http://config:5000/refresh</a></p>
+                                                                                class="form-control"
+                                                                                type="text"
+                                                                                placeholder="请输入要查询的项目名"/></a>
+                                    - 刷新 <a>http://
+                                        <input id="host" type="text"
+                                               class="form-control"
+                                               placeholder="请输入刷新HOSTNAME:PORT" />/refresh</a>
+                                    <input  onclick="refresh()" type="button" class="button" value="刷新"/>
+                                </p>
                             </div>
                         </section>
                     </div>
@@ -225,6 +230,66 @@
                     </div>
                 </div>
 
+                <div class="col-md-4">
+                    <div class="feed-box text-center">
+                        <section class="card">
+                            <div class="card-body">
+                                <div class="corner-ribon blue-ribon">
+                                    <i class="fa fa-twitter"></i>
+                                </div>
+                                <a href="#">
+                                    <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;"
+                                         alt="" src="images/admin.jpg"/>
+                                </a>
+                                <h2>客戶端申請工具</h2>
+                                <p><a onclick="">填寫申請信息 </a>
+                                    <a><input id="username"
+                                              class="form-control"
+                                              type="text"
+                                              placeholder="請輸入用戶名"/></a>
+                                    <a><input id="password"
+                                              class="form-control"
+                                              type="text"
+                                              placeholder="請輸入密碼"/></a>
+                                    <a><input id="grant_type"
+                                              class="form-control"
+                                              type="text"
+                                              placeholder="請輸入授權模式（password）"/></a>
+                                    <a><input id="scope"
+                                              class="form-control"
+                                              type="text"
+                                              placeholder="請輸入授權範圍（read write）"/></a>
+                                    - 申請 <a onclick="submitClient()">http://auth-service:5000/uaa/token</a></p>
+                                <p id="clientToken"></p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="feed-box text-center">
+                        <section class="card">
+                            <div class="card-body">
+                                <div class="corner-ribon blue-ribon">
+                                    <i class="fa fa-twitter"></i>
+                                </div>
+                                <a href="#">
+                                    <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;"
+                                         alt="" src="images/admin.jpg"/>
+                                </a>
+                                <h2>客戶端刷新工具</h2>
+                                <p><a onclick="">填寫刷新Token </a>
+                                    <a><input id="refreshToken"
+                                              class="form-control"
+                                              type="text"
+                                              placeholder="請輸入刷新密碼"/></a>
+                                    - 刷新 <a onclick="submitRefreshToken()">http://auth-service:5000/uaa/token</a>
+                                </p>
+                                <p id="refreshClientToken"></p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
 
             </div><!-- .row -->
         </div><!-- .animated -->
@@ -240,12 +305,12 @@
 <script th:src="@{/assets/js/plugins.js}"></script>
 <script th:src="@{/assets/js/main.js}"></script>
 <script type="text/javascript">
-    jQuery(document).ready(function(){
-        jQuery.get("/ui/getRoutes",function(data){
-            var json= JSON.parse(data);
+    jQuery(document).ready(function () {
+        jQuery.get("/ui/getRoutes", function (data) {
+            var json = JSON.parse(data);
             jQuery("#routes").children("li").remove();
-            jQuery.each(json,function(key,value){
-                var li='<li class="list-group-item"><a href="#"> <i class="fa fa-link"></i> '+value+' <span class="badge badge-success pull-right">'+key+'</span></a></li>';
+            jQuery.each(json, function (key, value) {
+                var li = '<li class="list-group-item"><a href="#"> <i class="fa fa-link"></i> ' + value + ' <span class="badge badge-success pull-right">' + key + '</span></a></li>';
                 jQuery("#routes").append(li)
             })
         })
@@ -273,7 +338,9 @@
 
     function refresh() {
         var projectName = jQuery("#projectName").val()
-        jQuery.get("/ui/refresh", function (data) {
+        jQuery.get("/ui/refresh",{
+            host:jQuery("#host")
+        } ,function (data) {
             alert("刷新成功");
         })
     }
@@ -284,6 +351,30 @@
         }, function (data) {
             jQuery("#projectNameShow").text(jQuery("#projectName").val());
             jQuery("#projectNameContent").text(data);
+        })
+    }
+    
+    function submitClient() {
+        var username =jQuery("#username").val();
+        var password =jQuery("#password").val();
+        var grant_type =jQuery("#grant_type").val();
+        var scope =jQuery("#scope").val();
+        jQuery.get("/ui/getClientToken",{
+            username:username,
+            password:password,
+            grant_type:grant_type,
+            scope:scope
+        },function (data) {
+            jQuery("#clientToken").text(data);
+        })
+    }
+
+    function submitRefreshToken() {
+        var refreshToken=jQuery("#refreshToken").val();
+        jQuery.get("/ui/getRefreshToken",{
+            refreshToken:refreshToken
+        },function (data) {
+            jQuery("#refreshClientToken").text(data);
         })
     }
 
