@@ -21,5 +21,15 @@
       <user-name>root</user-name>
       <introspection-schemas>*:*</introspection-schemas>
     </data-source>
+    <data-source name="udm462045153_db@udm462045153.my3w.com" uuid="8c0703b7-44ab-451d-9f75-c1a12afe4f7c">
+      <database-info product="MySQL" version="5.1.73" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.45 ( Revision: 9131eefa398531c7dc98776e8a3fe839e544c5b2 )">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>udm462045153</user-name>
+      <introspection-schemas>*:udm462045153_db</introspection-schemas>
+    </data-source>
   </component>
 </project>

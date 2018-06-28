@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.apereo.cas:cas-server-support-jdbc:5.3.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apereo/cas/cas-server-support-jdbc/5.3.0-SNAPSHOT/cas-server-support-jdbc-5.3.0-20180619.024235-52.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apereo/cas/cas-server-support-jdbc/5.3.0-SNAPSHOT/cas-server-support-jdbc-5.3.0-20180619.024235-52-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apereo/cas/cas-server-support-jdbc/5.3.0-SNAPSHOT/cas-server-support-jdbc-5.3.0-20180619.024235-52-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

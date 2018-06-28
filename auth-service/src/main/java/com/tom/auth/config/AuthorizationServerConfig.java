@@ -1,9 +1,9 @@
 package com.tom.auth.config;
 
+import com.tom.auth.service.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
@@ -23,7 +23,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Autowired
     private DataSource dataSource;
 
-    private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+    @Autowired
+    private CustomUserDetailsService userDetailsService;
 
     public JdbcTokenStore tokenStore(){
         return new JdbcTokenStore(dataSource);
@@ -46,7 +47,12 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 //                .autoApprove(true);
         clients
                 .jdbc(dataSource)
-//                .passwordEncoder(passwordEncoder)
+                .withClient("ClientId")
+                .secret("secret")
+                .authorizedGrantTypes("authorization_code")
+                .scopes("user_info")
+                .autoApprove(true)
+                .and()
                 .withClient("client")
                 .secret("secret")
                 .authorizedGrantTypes("password", "refresh_token")
@@ -58,22 +64,17 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .secret("password")
                 .authorizedGrantTypes("client_credentials", "refresh_token")
                 .scopes("server")
+                .autoApprove(true)
                 .and()
                 .withClient("svcb-service")
                 .secret("password")
                 .authorizedGrantTypes("client_credentials", "refresh_token")
-                .scopes("server")
-                .and()
-                .withClient("ClientId")
-                .secret("secret")
-                .authorizedGrantTypes("authorization_code")
-                .scopes("user_info")
-                .autoApprove(true);;
+                .scopes("server");
     }
 
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-        endpoints.authenticationManager(authenticationManager);
+        endpoints.authenticationManager(authenticationManager).userDetailsService(userDetailsService);
     }
 }
 

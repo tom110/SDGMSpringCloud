@@ -1,5 +1,6 @@
 package com.tom.auth.config;
 
+import com.tom.auth.util.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -7,6 +8,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 
 @EnableResourceServer
@@ -52,6 +54,26 @@ public class ResourceServerConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
         auth.parentAuthenticationManager(authenticationManager)
-                .userDetailsService(customUserDetailsService);
+                .userDetailsService(customUserDetailsService).passwordEncoder(new PasswordEncoder(){
+
+            @Override
+            public String encode(CharSequence rawPassword) {
+                try {
+                    return MD5Util.getMD5Str((String)rawPassword);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    return null;
+                }
+            }
+
+            @Override
+            public boolean matches(CharSequence rawPassword, String encodedPassword) {
+                try {
+                    return encodedPassword.equals(MD5Util.getMD5Str((String)rawPassword));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    return false;
+                }
+            }}); //user Details Service验证;
     }
 }

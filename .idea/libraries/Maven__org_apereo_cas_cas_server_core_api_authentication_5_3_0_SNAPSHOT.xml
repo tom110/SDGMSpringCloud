@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.apereo.cas:cas-server-core-api-authentication:5.3.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apereo/cas/cas-server-core-api-authentication/5.3.0-SNAPSHOT/cas-server-core-api-authentication-5.3.0-20180619.023723-57.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apereo/cas/cas-server-core-api-authentication/5.3.0-SNAPSHOT/cas-server-core-api-authentication-5.3.0-20180619.023723-57-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apereo/cas/cas-server-core-api-authentication/5.3.0-SNAPSHOT/cas-server-core-api-authentication-5.3.0-20180619.023723-57-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -9,6 +9,7 @@ import com.tom.clientmgr.services.AuthorityService;
 import com.tom.clientmgr.services.CRUDService;
 import com.tom.clientmgr.services.RoleService;
 import com.tom.clientmgr.services.UsersService;
+import com.tom.clientmgr.util.MD5Util;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.json.simple.JSONArray;
@@ -19,6 +20,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.lang.reflect.Array;
+import java.math.BigInteger;
+import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -68,12 +71,17 @@ public class UsersPermissionController {
                 if (jsonArray.size() > 0) {
                     jsonArray.stream().map(ja -> {
                         JSONArray jsa = (JSONArray) ja;
-                        Users users = new Users(
-                                jsa.get(1).toString(),
-                                jsa.get(2).toString(),
-                                jsa.get(3).toString(),
-                                Integer.parseInt((String) jsa.get(4)),
-                                jsa.get(5).toString());
+                        Users users = null;
+                        try {
+                            users = new Users(
+                                    jsa.get(1).toString(),
+                                    jsa.get(2).toString(),
+                                    MD5Util.getMD5Str(jsa.get(3).toString()),
+                                    Integer.parseInt((String) jsa.get(4)),
+                                    jsa.get(5).toString());
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         return users;
                     }).forEach(u -> usersService.saveOrUpdate((Users)u));
                     return "操作成功！";
@@ -84,14 +92,30 @@ public class UsersPermissionController {
                 if (jsonArray.size() > 0) {
                     jsonArray.stream().map(ja -> {
                         JSONArray jsa = (JSONArray) ja;
-                        Users users = new Users(
-                                Integer.parseInt(jsa.get(0).toString()),
-                                jsa.get(1).toString(),
-                                jsa.get(2).toString(),
-                                jsa.get(3).toString(),
-                                Integer.parseInt((String) jsa.get(4)),
-                                jsa.get(5).toString());
-                        return users;
+                        if (MD5Util.isValidMessageAudio(jsa.get(3).toString())){
+                            Users users = new Users(
+                                    Integer.parseInt(jsa.get(0).toString()),
+                                    jsa.get(1).toString(),
+                                    jsa.get(2).toString(),
+                                    jsa.get(3).toString(),
+                                    Integer.parseInt((String) jsa.get(4)),
+                                    jsa.get(5).toString());
+                            return users;
+                        }else{
+                            Users users = null;
+                            try {
+                                users = new Users(
+                                        Integer.parseInt(jsa.get(0).toString()),
+                                        jsa.get(1).toString(),
+                                        jsa.get(2).toString(),
+                                        MD5Util.getMD5Str(jsa.get(3).toString()),
+                                        Integer.parseInt((String) jsa.get(4)),
+                                        jsa.get(5).toString());
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                            return users;
+                        }
                     }).forEach(u -> usersService.saveOrUpdate((Users)u));
                     return "操作成功！";
                 }else{
@@ -306,6 +330,5 @@ public class UsersPermissionController {
         }
 
     }
-
 
 }

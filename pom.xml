@@ -18,6 +18,8 @@
         <module>gateway</module>
         <module>auth-service</module>
         <module>auth-client-mgr</module>
+        <module>CASclient</module>
+        <module>auth-rest-service</module>
     </modules>
 
     <parent>

@@ -204,11 +204,11 @@
                                          alt="" src="images/admin.jpg"/>
                                 </a>
                                 <h2>配置中心刷新工具</h2>
-                                <p><a onclick="getYml()">获取配置文件信息 </a><a href="#"><input id="projectName"
+                                <p><a onclick="getYml()">获取配置文件信息 </a><a><input id="projectName"
                                                                                          class="form-control"
                                                                                          type="text"
                                                                                          placeholder="请输入要查询的项目名"/></a>
-                                    - 刷新 <a href="#" onclick="refresh()">http://config:5000/refresh</a></p>
+                                    - 刷新 <a onclick="refresh()">http://config:5000/refresh</a></p>
                             </div>
                         </section>
                     </div>
@@ -217,7 +217,7 @@
                 <div class="col-md-8">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title" id="projectNameShow">Card with switch</strong>
+                            <strong class="card-title" id="projectNameShow">配置中心面板</strong>
                         </div>
                         <div class="card-body">
                             <p class="card-text" id="projectNameContent"></p>
@@ -280,9 +280,9 @@
 
     function getYml() {
         jQuery.get("/ui/getYml", {
-            projectName: projectName
+            projectName: jQuery("#projectName").val()
         }, function (data) {
-            jQuery("#projectNameShow").text(projectName);
+            jQuery("#projectNameShow").text(jQuery("#projectName").val());
             jQuery("#projectNameContent").text(data);
         })
     }

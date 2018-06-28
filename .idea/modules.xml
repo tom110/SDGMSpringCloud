@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/CASclient/CAS-client.iml" filepath="$PROJECT_DIR$/CASclient/CAS-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/SDGMProject.iml" filepath="$PROJECT_DIR$/SDGMProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/auth-client-mgr/auth-client-mgr.iml" filepath="$PROJECT_DIR$/auth-client-mgr/auth-client-mgr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/auth-rest-service/auth-rest-service.iml" filepath="$PROJECT_DIR$/auth-rest-service/auth-rest-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/auth-service/auth-service.iml" filepath="$PROJECT_DIR$/auth-service/auth-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CAS-server/cas-overlay.iml" filepath="$PROJECT_DIR$/CAS-server/cas-overlay.iml" />
       <module fileurl="file://$PROJECT_DIR$/config/config.iml" filepath="$PROJECT_DIR$/config/config.iml" />
       <module fileurl="file://$PROJECT_DIR$/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/monitor/monitor.iml" filepath="$PROJECT_DIR$/monitor/monitor.iml" />
