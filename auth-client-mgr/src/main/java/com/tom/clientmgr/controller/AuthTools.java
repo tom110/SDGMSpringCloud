@@ -1,6 +1,7 @@
 package com.tom.clientmgr.controller;
 
 import com.tom.clientmgr.services.OauthClientDetailsService;
+import com.tom.clientmgr.services.UsersService;
 import com.tom.clientmgr.util.MD5Util;
 import org.apache.http.Consts;
 import org.apache.http.HttpEntity;
@@ -24,12 +25,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.data.repository.query.Param;
+import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,6 +64,8 @@ public class AuthTools {
     @Autowired
     private OauthClientDetailsService oauthClientDetailsService;
 
+    @Autowired
+    private UsersService usersService;
 
     private Logger log = LogManager.getLogger(AuthTools.class);
 
@@ -94,9 +99,10 @@ public class AuthTools {
     }
 
     @RequestMapping(value = "/refresh", method = RequestMethod.GET)
-    public void refresh(@RequestParam("host") String host) throws IOException {
+    public void refresh(@RequestParam("host") String host, Principal principal) throws IOException {
         CredentialsProvider provider = new BasicCredentialsProvider();
-        UsernamePasswordCredentials credentials = new UsernamePasswordCredentials(user, password);
+        String username=((OAuth2Authentication) principal).getPrincipal().toString();
+        UsernamePasswordCredentials credentials = new UsernamePasswordCredentials(username, usersService.getUsersByUsername(username).getPassword());
         provider.setCredentials(AuthScope.ANY, credentials);
         HttpClient httpClient = HttpClientBuilder.create().setDefaultCredentialsProvider(provider).build();
 

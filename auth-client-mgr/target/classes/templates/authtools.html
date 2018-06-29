@@ -339,7 +339,7 @@
     function refresh() {
         var projectName = jQuery("#projectName").val()
         jQuery.get("/ui/refresh",{
-            host:jQuery("#host")
+            host:jQuery("#host").val()
         } ,function (data) {
             alert("刷新成功");
         })

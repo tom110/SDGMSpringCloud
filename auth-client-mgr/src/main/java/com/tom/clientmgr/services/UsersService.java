@@ -12,4 +12,6 @@ import java.util.List;
 public interface UsersService extends CRUDService<Users>{
 
     void userBindRoles(Integer userId, String roleIds) throws ParseException;
+
+    Users getUsersByUsername(String username);
 }

@@ -59,6 +59,7 @@
     <script th:src="@{AdminLTE/dist/js/OpenLayers.js}"></script>
     <script th:src="@{AdminLTE/dist/js/zdclient.js}"></script>
     <script th:src="@{AdminLTE/dist/js/function.js}"></script>
+    <script th:src="@{AdminLTE/dist/js/r_TooltipControl.js}"></script>
     <!--<script src="http://172.24.145.113:8080/sdgm3d/AdminLTE-2.4.3/dist/js/jquery-1.8.2.min.js"></script>-->
     <!-- AdminLTE for demo purposes -->
     <script th:src="@{AdminLTE/dist/js/demo.js}"></script>
@@ -87,211 +88,28 @@
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
                     <!-- Messages: style can be found in dropdown.less-->
-                    <li class="dropdown messages-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-envelope-o"></i>
-                            <span class="label label-success">4</span>
+                    <li class="messages-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" onclick="measureLength()">
+                            <i class="fa  fa-arrows-h"></i>
                         </a>
-                        <ul class="dropdown-menu">
-                            <li class="header">You have 4 messages</li>
-                            <li>
-                                <!-- inner menu: contains the actual data -->
-                                <ul class="menu">
-                                    <li><!-- start message -->
-                                        <a href="#">
-                                            <div class="pull-left">
-                                                <img th:src="@{AdminLTE/dist/img/user2-160x160.jpg}" class="img-circle"
-                                                     alt="User Image"/>
-                                            </div>
-                                            <h4>
-                                                Support Team
-                                                <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                                            </h4>
-                                            <p>Why not buy a new awesome theme?</p>
-                                        </a>
-                                    </li>
-                                    <!-- end message -->
-                                    <li>
-                                        <a href="#">
-                                            <div class="pull-left">
-                                                <img src="dist/img/user3-128x128.jpg" class="img-circle"
-                                                     alt="User Image"/>
-                                            </div>
-                                            <h4>
-                                                AdminLTE Design Team
-                                                <small><i class="fa fa-clock-o"></i> 2 hours</small>
-                                            </h4>
-                                            <p>Why not buy a new awesome theme?</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <div class="pull-left">
-                                                <img src="dist/img/user4-128x128.jpg" class="img-circle"
-                                                     alt="User Image"/>
-                                            </div>
-                                            <h4>
-                                                Developers
-                                                <small><i class="fa fa-clock-o"></i> Today</small>
-                                            </h4>
-                                            <p>Why not buy a new awesome theme?</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <div class="pull-left">
-                                                <img th:src="@{AdminLTE/dist/img/user3-128x128.jpg}" class="img-circle"
-                                                     alt="User Image"/>
-                                            </div>
-                                            <h4>
-                                                Sales Department
-                                                <small><i class="fa fa-clock-o"></i> Yesterday</small>
-                                            </h4>
-                                            <p>Why not buy a new awesome theme?</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <div class="pull-left">
-                                                <img th:src="@{AdminLTE/dist/img/user4-128x128.jpg}" class="img-circle"
-                                                     alt="User Image"/>
-                                            </div>
-                                            <h4>
-                                                Reviewers
-                                                <small><i class="fa fa-clock-o"></i> 2 days</small>
-                                            </h4>
-                                            <p>Why not buy a new awesome theme?</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="footer"><a href="#">See All Messages</a></li>
-                        </ul>
                     </li>
                     <!-- Notifications: style can be found in dropdown.less -->
-                    <li class="dropdown notifications-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-bell-o"></i>
-                            <span class="label label-warning">10</span>
+                    <li class="notifications-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" onclick="measureArea()">
+                            <i class="fa fa-connectdevelop"></i>
                         </a>
-                        <ul class="dropdown-menu">
-                            <li class="header">You have 10 notifications</li>
-                            <li>
-                                <!-- inner menu: contains the actual data -->
-                                <ul class="menu">
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-warning text-yellow"></i> Very long description here that
-                                            may not fit into the
-                                            page and may cause design problems
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-users text-red"></i> 5 new members joined
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-shopping-cart text-green"></i> 25 sales made
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-user text-red"></i> You changed your username
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="footer"><a href="#">View all</a></li>
-                        </ul>
+                    </li>
+                    <!-- Notifications: style can be found in dropdown.less -->
+                    <li class="notifications-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" onclick="stopMeasure()">
+                            <i class="fa fa-stop"></i>
+                        </a>
                     </li>
                     <!-- Tasks: style can be found in dropdown.less -->
-                    <li class="dropdown tasks-menu">
+                    <li class="tasks-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-flag-o"></i>
-                            <span class="label label-danger">9</span>
+                            <i class="fa  fa-sign-out"></i>
                         </a>
-                        <ul class="dropdown-menu">
-                            <li class="header">You have 9 tasks</li>
-                            <li>
-                                <!-- inner menu: contains the actual data -->
-                                <ul class="menu">
-                                    <li><!-- Task item -->
-                                        <a href="#">
-                                            <h3>
-                                                Design some buttons
-                                                <small class="pull-right">20%</small>
-                                            </h3>
-                                            <div class="progress xs">
-                                                <div class="progress-bar progress-bar-aqua" style="width: 20%"
-                                                     role="progressbar"
-                                                     aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                    <span class="sr-only">20% Complete</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <!-- end task item -->
-                                    <li><!-- Task item -->
-                                        <a href="#">
-                                            <h3>
-                                                Create a nice theme
-                                                <small class="pull-right">40%</small>
-                                            </h3>
-                                            <div class="progress xs">
-                                                <div class="progress-bar progress-bar-green" style="width: 40%"
-                                                     role="progressbar"
-                                                     aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                    <span class="sr-only">40% Complete</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <!-- end task item -->
-                                    <li><!-- Task item -->
-                                        <a href="#">
-                                            <h3>
-                                                Some task I need to do
-                                                <small class="pull-right">60%</small>
-                                            </h3>
-                                            <div class="progress xs">
-                                                <div class="progress-bar progress-bar-red" style="width: 60%"
-                                                     role="progressbar"
-                                                     aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                    <span class="sr-only">60% Complete</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <!-- end task item -->
-                                    <li><!-- Task item -->
-                                        <a href="#">
-                                            <h3>
-                                                Make beautiful transitions
-                                                <small class="pull-right">80%</small>
-                                            </h3>
-                                            <div class="progress xs">
-                                                <div class="progress-bar progress-bar-yellow" style="width: 80%"
-                                                     role="progressbar"
-                                                     aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                    <span class="sr-only">80% Complete</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <!-- end task item -->
-                                </ul>
-                            </li>
-                            <li class="footer">
-                                <a href="#">View all tasks</a>
-                            </li>
-                        </ul>
                     </li>
                 </ul>
             </div>
@@ -308,8 +126,8 @@
                     <img th:src="@{AdminLTE/dist/img/user2-160x160.jpg}" class="img-circle" alt="User Image"/>
                 </div>
                 <div class="pull-left info">
-                    <p>Alexander Pierce</p>
-                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                    <p>管理员</p>
+                    <a href="#"><i class="fa fa-circle text-success"></i>在线</a>
                 </div>
             </div>
             <!-- search form -->
@@ -331,46 +149,68 @@
 
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>地层操作</span>
+                        <i class="fa fa-cube"></i> <span>加载操作</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li onclick="addMap()"><a href="#"><i class="fa fa-circle-o"></i>地层定位</a></li>
-                        <li onclick="addMap1()"><a href="#"><i class="fa fa-circle-o"></i>钻孔加载</a></li>
-                        <li onclick="addMap2()"><a href="#"><i class="fa fa-circle-o"></i>地层加载</a></li>
-                        <li onclick="ABSurface()"><a href="#"><i class="fa fa-circle-o"></i>切割面显示</a></li>
-                        <li onclick="ABSurfaceexeCut()"><a href="#"><i class="fa fa-circle-o"></i>地层切割</a></li>
-                        <li onclick="startBoomAnalysis()"><a href="#"><i class="fa fa-circle-o"></i>爆炸显示</a></li>
-                        <li onclick="stopBoomAnalysis()"><a href="#"><i class="fa fa-circle-o"></i>爆炸显示取消</a></li>
-                        <li onclick="createpipe()"><a href="#" class="fa fa-circle-o">地层隧道显示</a></li>
-                        <li onclick="createpipeexeCut()"><a href="#"><i class="fa fa-circle-o"></i>地层隧道挖孔</a></li>
-                        <li onclick="removeCut()"><a href="#"><i class="fa fa-circle-o"></i>结束切割绘制</a></li>
-                        <li onclick="addcutModel()"><a href="#"><i class="fa fa-circle-o"></i>加载切割结果</a></li>
+                        <li onclick="addMap()"><a href="#"><i class="fa fa-flag"></i>三维场景加载</a></li>
+                        <li onclick="addMap1()"><a href="#"><i class="fa fa-map-signs"></i>钻孔加载</a></li>
+                        <li onclick="addMap2()"><a href="#"><i class="fa fa-bars"></i>地层加载</a></li>
+                        <li onclick="addDEM()"><a href="#"><i class="fa fa-circle-o"></i>地形加载</a></li>
+                    </ul>
+                </li>
+
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-medium"></i> <span>地层分析</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li onclick="startBoomAnalysis()"><a href="#"><i class="fa fa-list"></i>爆炸显示</a></li>
+                        <li onclick="stopBoomAnalysis()"><a href="#"><i class="fa fa-outdent"></i>爆炸显示取消</a></li>
+                        <li onclick="ABSurface()"><a href="#"><i class="fa fa-contao"></i>切割面显示</a></li>
+                        <li onclick="ABSurfaceexeCut()"><a href="#"><i class="fa fa-codepen"></i>地层切割</a></li>
+                        <li onclick="createpipe()"><a href="#"><i class="fa fa-openid"></i>地层隧道显示</a></li>
+                        <li onclick="createpipeexeCut()"><a href="#"><i class="fa fa-medium"></i>地层隧道挖孔</a></li>
+                        <li onclick="removeCut()"><a href="#"><i class="fa fa-medium"></i>结束切割绘制</a></li>
+                        <li onclick="addcutModel()"><a href="#"><i class="fa fa-medium"></i>加载切割结果</a></li>
 
                     </ul>
                 </li>
+
+
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>地形操作</span>
+                        <i class="fa fa-map-o"></i> <span>地形操作</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li onclick="addDEM()"><a href="#"><i class="fa fa-circle-o"></i>地形加载</a></li>
-                        <li onclick="measureArea()"><a href="#"><i class="fa fa-circle-o"></i>面积测量</a></li>
-                        <li onclick="measureLength()"><a href="#"><i class="fa fa-circle-o"></i>距离测量</a></li>
-                        <li onclick="stopMeasure()"><a href="#"><i class="fa fa-circle-o"></i>测量结束</a></li>
                         <li onclick="flood()"><a href="#"><i class="fa fa-circle-o"></i>洪水淹没分析</a></li>
                         <li onclick="cutfillanalysis()"><a href="#"><i class="fa fa-circle-o"></i>挖填方分析</a></li>
-                        <li onclick="terSectAnalysis()"><a href="#"><i class="fa fa-circle-o"></i>地形剖切</a></li>
+                        <li onclick="terSectAnalysis()"><a href="#"><i class="fa fa-circle-o"></i>地形剖切分析</a></li>
                         <li onclick="stopAnalysis()"><a href="#"><i class="fa fa-circle-o"></i>结束分析</a></li>
-                        <li onclick="addPnt()"><a href="#"><i class="fa fa-circle-o"></i>模型模拟</a></li>
-                        <li onclick="removeAll3DElem()"><a href="#"><i class="fa fa-circle-o"></i>清除模型模拟</a></li>
                     </ul>
                 </li>
+
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-map-o"></i> <span>模型模拟</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li onclick="addPnt()"><a href="#"><i class="fa fa-circle-o"></i>模型模拟开始</a></li>
+                        <li onclick="removeAll3DElem()"><a href="#"><i class="fa fa-circle-o"></i>模型模拟结束</a></li>
+                    </ul>
+                </li>
+
                 <li class="treeview">
                     <a href="#">
                         <i class="fa fa-dashboard"></i> <span>模型查询</span>

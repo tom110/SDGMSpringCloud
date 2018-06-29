@@ -9,12 +9,71 @@ var map;
 var helpGeometry;
 var range3Dstr = "";
 var globe = new Globe();
-var zkmodelId, mxmodelId;
+var zkmodelId, mxmodelId, labelId1, labelId2;
 var openflag = false;
+var mapId_img = 0;
+var mapId_cia = 0;
 
 //地球载入初始化
 function init() {
     globe.load();
+
+    mapId_img = globe.addTianditu("img");
+    mapId_cia = globe.addTianditu("cia");
+
+    //删除上一个标注
+    if (labelId1 != "" || labelId2 != "") {
+        globe.removeLabelByName(labelId1);
+        globe.removeLabelByName(labelId2);
+    }
+
+    var strObj = new Bubble();
+    strObj.text = "胶东山区";       //标注文本
+    strObj.x = 122.177;                   //标注点X
+    strObj.y = 37.33;                    //标注点Y
+    strObj.z = 0;                       //标注点Z
+    strObj.fontsize = 20;
+    strObj.fontcolor = 0xFFFFFFFF;      //字体颜色
+    strObj.bgColor = 0xffCDAD00;        //标注区域的背景颜色
+    strObj.opacity = 1.0;               //气泡标注透明度
+    strObj.width = 30;                  //气泡标注的宽
+    strObj.height = 25;                 //气泡标注的高
+    strObj.attribute = this.text;
+
+    //调用addBubble方法添加气泡标注
+    labelId1 = globe.addBubble(strObj);
+
+    var strObj1 = new Bubble();
+    strObj1.text = "泰安山区";       //标注文本
+    strObj1.x = 117.182;                   //标注点X
+    strObj1.y = 36.323;                   //标注点Y
+    strObj1.z = 0;                       //标注点Z
+    strObj1.fontcolor = 0xFFFFFFFF;      //字体颜色
+    strObj1.fontsize = 20;
+    strObj1.bgColor = 0xffCDAD00;        //标注区域的背景颜色
+    strObj1.opacity = 1.0;               //气泡标注透明度
+    strObj1.width = 30;                  //气泡标注的宽
+    strObj1.height = 25;                 //气泡标注的高
+    strObj1.attribute = this.text;
+
+    //调用addBubble方法添加气泡标注
+    labelId2 = globe.addBubble(strObj1);
+
+    //拾取标注的的监听事件
+    globe.addEventListener(EventType.PickLabel, function (attribute) {
+        alert(attribute.split(":")[0]);
+        addMap();
+    });
+
+    globe.startPickLabel();
+
+    if (labelId == "") {
+        alert("添加标注失败！");
+    }
+
+    if (mapId == -1) {
+        alert("加载地图失败！");
+    }
     $("#macher2").css("height", window.innerHeight - 50)
     // setTimeout("jump()",8000);
 
@@ -29,6 +88,7 @@ function init() {
 //加载模型
 function addMap() {
     globe.load();
+    globe.removeAll();
     if (DEMID > 0 || DEMID) {
         removeCut();
         globe.removeAllDoc();

@@ -8,11 +8,13 @@ import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 @Service("usersService")
 public class UsersServiceImpl implements UsersService{
@@ -55,5 +57,16 @@ public class UsersServiceImpl implements UsersService{
             if(!users.getRoles().contains((Role) role))
                 users.getRoles().add((Role) role);
         });
+    }
+
+    @Override
+    public Users getUsersByUsername(String username) {
+        Optional<Users> usersOptional = usersRepository.findByName(username);
+
+        usersOptional
+                .orElseThrow(() -> new UsernameNotFoundException("Username not found!"));
+        return usersOptional
+                .map(Users::new)
+                .get();
     }
 }
