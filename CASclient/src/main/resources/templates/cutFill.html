@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>洪水淹没</title>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+<div id="analyFlood">
+    <!--<div class="">-->
+    <!--<div class="" style="">淹没分析参数设置</div>-->
+    <!--<table class="">-->
+    <!--<tr class="">-->
+    <!--<td style="width:90px;">淹没颜色</td>-->
+    <!--<td>-->
+    <!--<input id="viewColorFlood" class="" value="0x0000ff" />-->
+    <!--</td>-->
+    <!--</tr>-->
+    <!--<tr class="">-->
+    <!--<td>透明度</td>-->
+    <!--<td>-->
+    <!--<input id="alphaSpinnerFlood" type="text" class="" />-->
+    <!--</td>-->
+    <!--</tr>-->
+    <!--<tr class="analysis-tr">-->
+    <!--<td>扩大区域(倍)</td>-->
+    <!--<td>-->
+    <!--<input id="expanSpinnerFlood" type="text" class="" />-->
+    <!--</td>-->
+    <!--</tr>-->
+    <!--<tr class="analysis-tr">-->
+    <!--<td>淹没高度(米)</td>-->
+    <!--<td>-->
+    <!--<input id="highSpinnerFlood" type="text" class="" />-->
+    <!--</td>-->
+    <!--</tr>-->
+    <!--</table>-->
+    <!--</div>-->
+    <!--<hr />-->
+    <div class="">
+        <div class="" style="">填挖方分析参数设置</div>
+        <table class="">
+            <tr class="">
+                <td style="">填区域颜色</td>
+                <td>
+                    <input id="fillColorCut" class="" value="0x0fb9ff" />
+                </td>
+            </tr>
+            <tr class="">
+                <td>挖区域颜色</td>
+                <td>
+                    <input id="cutColorCut" type="text" class="" value="0x00ff00" />
+                </td>
+            </tr>
+            <tr class="analysis-tr">
+                <td>无填挖区域颜色</td>
+                <td>
+                    <input id="noneColorCut" type="text" class="" value="0x3aeeb3" />
+                </td>
+            </tr>
+            <tr class="analysis-tr">
+                <td>平整高度(米)</td>
+                <td>
+                    <input id="highTxtCut" type="text" class="" value="0" />
+                </td>
+            </tr>
+            <tr class="analysis-tr">
+                <td></td>
+                <td>
+                    <input id="fillCut" onclick="parent.fillCut()" type="button" class="" value="框选分析区域" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

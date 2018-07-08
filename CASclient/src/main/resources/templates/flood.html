@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>洪水淹没</title>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="analyFlood">
+        <div class="">
+            <div class="" style="">淹没分析参数设置</div>
+            <table class="">
+                <tr class="">
+                    <td>淹没颜色</td>
+                    <td>
+                        <input id="viewColorFlood" class="" value="0xFF0000" />
+                    </td>
+                </tr>
+                <tr class="">
+                    <td>透明度</td>
+                    <td>
+                        <input id="alphaSpinnerFlood" value="1" type="text" class="" />
+                    </td>
+                </tr>
+                <tr class="analysis-tr">
+                    <td>扩大区域(倍)</td>
+                    <td>
+                        <input id="expanSpinnerFlood" value="1" type="text" class="" />
+                    </td>
+                </tr>
+                <tr class="analysis-tr">
+                    <td>淹没高度(米)</td>
+                    <td>
+                        <input id="highSpinnerFlood" value="200" type="text" class="" />
+                    </td>
+                </tr>
+                <tr class="analysis-tr">
+                    <td></td>
+                    <td>
+                        <input id="flood" type="button" onclick="parent.flood()" class="" value="设置分析关键点"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

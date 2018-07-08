@@ -408,14 +408,14 @@ function stopBoomAnalysis() {
     globe.stopAnalyzeTool(EnumCommToolType.BombShow);
 }
 
-//任意平面切割
-function ABSurface() {
-    //移除切割面
-    removeCut();
-    //三维切割辅助面
-    helpGeometry = globe.createABSurface(range3Dstr, 0, 45);
-    alert(helpGeometry);
-}
+// //任意平面切割
+// function ABSurface() {
+//     //移除切割面
+//     removeCut();
+//     //三维切割辅助面
+//     helpGeometry = globe.createABSurface(range3Dstr, 0, 45);
+//     alert(helpGeometry);
+// }
 
 //执行任意面切割切割
 function ABSurfaceexeCut() {

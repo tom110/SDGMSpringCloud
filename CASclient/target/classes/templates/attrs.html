@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{AdminLTE/bower_components/bootstrap/dist/css/bootstrap.css}"/>
+    <script th:src="@{AdminLTE/bower_components/select2/vendor/jquery-2.1.0.js}"></script>
+    <script th:src="@{AdminLTE/bower_components/bootstrap/dist/js/boostrap.js}"></script>
+    <style>
+        body {
+            color: aqua;
+        }
+    </style>
+    <script>
+        function ac() {
+            $("ul").children("li").each(function () {
+                $(this).click(function () {
+                    $("ul li").removeClass("active");
+                    $(this).addClass("active");
+                    parent.sparkModel($(this).attr("data"));
+                })
+            })
+        }
+    </script>
+</head>
+<body>
+<ul id="attrs" class="nav nav-pills nav-stacked">
+    <!--<li role="presentation" class="active"><a href="#">Home</a></li>-->
+    <!--<li role="presentation"><a href="#">Profile</a></li>-->
+    <!--<li role="presentation"><a href="#">Messages</a></li>-->
+</ul>
+</body>
+</html>

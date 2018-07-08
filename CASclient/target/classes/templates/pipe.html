@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{AdminLTE/bower_components/jquery-ui/themes/base/jquery-ui.css}"/>
+    <script th:src="@{AdminLTE/bower_components/select2/vendor/jquery-2.1.0.js}"></script>
+    <script th:src="@{AdminLTE/plugins/jQueryUI/jquery-ui.min.js}"></script>
+    <style>
+        body {
+            color: aqua;
+        }
+    </style>
+    <script>
+
+        var alphaValue=0,beltaValue=0;
+        $( function() {
+            $( "#alphaValue" ).slider({
+                change: function( event, ui ) {
+                    alphaValue=ui.value*100;
+                    parent.createpipeByDepthHeight(alphaValue,beltaValue);
+                }
+            });
+            $( "#beltaValue" ).slider({
+                change: function( event, ui ) {
+                    beltaValue=ui.value*100;
+                    parent.createpipeByDepthHeight(alphaValue,beltaValue);
+                }
+            });
+        } );
+    </script>
+</head>
+<body>
+<p>alphaValue:</p>
+<div id="alphaValue"></div>
+<p>beltaValue:</p>
+<div id="beltaValue"></div>
+<input type="button" value="切割地层" onclick="parent.createpipeexeCut(alphaValue,beltaValue)" />
+<input type="button" value="切割体1" onclick="parent.showPipeFrist()" />
+<input type="button" value="切割体2" onclick="parent.showPipeSecond()" />
+</body>
+</html>

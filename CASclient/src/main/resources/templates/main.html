@@ -63,6 +63,15 @@
     <!--<script src="http://172.24.145.113:8080/sdgm3d/AdminLTE-2.4.3/dist/js/jquery-1.8.2.min.js"></script>-->
     <!-- AdminLTE for demo purposes -->
     <script th:src="@{AdminLTE/dist/js/demo.js}"></script>
+    <script th:src="@{AdminLTE/dist/js/my.js}"></script>
+    <style type="text/css">
+        .control-block{
+            display: block;
+        }
+        .control-none{
+            display: none;
+        }
+    </style>
 </head>
 <body onload="init()" class="hold-transition skin-blue sidebar-mini" style="height: 100%;margin: 0px;padding: 0px;">
 
@@ -87,6 +96,18 @@
             <!-- Navbar Right Menu -->
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
+                    <!-- Messages: style can be found in dropdown.less-->
+                    <li class="messages-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" onclick="findAttr()">
+                            <i id="findAttrIcon" class="fa fa-toggle-off"></i>
+                        </a>
+                    </li>
+                    <!-- Messages: style can be found in dropdown.less-->
+                    <li class="messages-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" onclick="BoomAnalysis()">
+                            <i class="fa  fa-list"></i>
+                        </a>
+                    </li>
                     <!-- Messages: style can be found in dropdown.less-->
                     <li class="messages-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" onclick="measureLength()">
@@ -170,31 +191,26 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li onclick="startBoomAnalysis()"><a href="#"><i class="fa fa-list"></i>爆炸显示</a></li>
-                        <li onclick="stopBoomAnalysis()"><a href="#"><i class="fa fa-outdent"></i>爆炸显示取消</a></li>
-                        <li onclick="ABSurface()"><a href="#"><i class="fa fa-contao"></i>切割面显示</a></li>
-                        <li onclick="ABSurfaceexeCut()"><a href="#"><i class="fa fa-codepen"></i>地层切割</a></li>
-                        <li onclick="createpipe()"><a href="#"><i class="fa fa-openid"></i>地层隧道显示</a></li>
-                        <li onclick="createpipeexeCut()"><a href="#"><i class="fa fa-medium"></i>地层隧道挖孔</a></li>
-                        <li onclick="removeCut()"><a href="#"><i class="fa fa-medium"></i>结束切割绘制</a></li>
-                        <li onclick="addcutModel()"><a href="#"><i class="fa fa-medium"></i>加载切割结果</a></li>
-
+                        <!--<li onclick="BoomAnalysis()"><a href="#"><i class="fa fa-list"></i>爆炸显示</a></li>-->
+                        <li onclick="showABSurface()"><a href="#"><i class="fa fa-contao"></i>地层切割</a></li>
+                        <li onclick="showPipeSurface()"><a href="#"><i class="fa fa-openid"></i>隧道切割</a></li>
+                        <li onclick="stopCuttingAnaysis()"><a href="#"><i class="fa  fa-square"></i>结束分析</a></li>
                     </ul>
                 </li>
 
 
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-map-o"></i> <span>地形操作</span>
+                        <i class="fa fa-industry"></i> <span>地形分析</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li onclick="flood()"><a href="#"><i class="fa fa-circle-o"></i>洪水淹没分析</a></li>
-                        <li onclick="cutfillanalysis()"><a href="#"><i class="fa fa-circle-o"></i>挖填方分析</a></li>
-                        <li onclick="terSectAnalysis()"><a href="#"><i class="fa fa-circle-o"></i>地形剖切分析</a></li>
-                        <li onclick="stopAnalysis()"><a href="#"><i class="fa fa-circle-o"></i>结束分析</a></li>
+                        <li onclick="flood1()"><a href="#"><i class="fa fa-opencart"></i>洪水淹没分析</a></li>
+                        <li onclick="cutfillanalysis1()"><a href="#"><i class="fa fa-eraser"></i>挖填方分析</a></li>
+                        <li onclick="terSectAnalysis()"><a href="#"><i class="fa fa-ticket"></i>地形剖切分析</a></li>
+                        <li onclick="stopAnalysis()"><a href="#"><i class="fa fa-square"></i>结束分析</a></li>
                     </ul>
                 </li>
 
@@ -206,8 +222,8 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li onclick="addPnt()"><a href="#"><i class="fa fa-circle-o"></i>模型模拟开始</a></li>
-                        <li onclick="removeAll3DElem()"><a href="#"><i class="fa fa-circle-o"></i>模型模拟结束</a></li>
+                        <li onclick="GetGemoPnt()"><a href="#"><i class="fa fa-tree"></i>模型模拟</a></li>
+                        <li onclick="removeAllGraphic()"><a href="#"><i class="fa fa-square"></i>结束模型模拟</a></li>
                     </ul>
                 </li>
 
@@ -219,10 +235,10 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li onclick="PickModelReady()"><a href="#"><i class="fa fa-circle-o"></i>开始查询</a></li>
-                        <li onclick="stopPickModelReady()"><a href="#"><i class="fa fa-circle-o"></i>结束查询</a></li>
-                        <li onclick="PickModel()"><a href="#"><i class="fa fa-circle-o"></i>体查询开启</a></li>
-                        <li onclick="stopPickModel_M()"><a href="#"><i class="fa fa-circle-o"></i>体查询注销</a></li>
+                        <!--<li onclick="PickModelReady()"><a href="#"><i class="fa fa-circle-o"></i>开始查询</a></li>-->
+                        <!--<li onclick="stopPickModelReady()"><a href="#"><i class="fa fa-circle-o"></i>结束查询</a></li>-->
+                        <li onclick="PickModel()"><a href="#"><i class="fa fa-plus-square"></i>全景模型查询开启</a></li>
+                        <li onclick="stopPickModel_M()"><a href="#"><i class="fa fa-plus-square-o"></i>全景模型查询关闭</a></li>
                     </ul>
                 </li>
 
@@ -445,6 +461,7 @@
     <div class="control-sidebar-bg"></div>
 
 </div>
-<script th:src="@{AdminLTE/dist/js/my.js}"></script>
+<iframe id="FloodControl" src="/flood" frameborder="0" allowtransparency="true" scrolling="no" class="control-none"
+    style="position: absolute;top: 50px;left: 280px;width: auto;height: auto;z-index: 9999;background-color: rgb(51,64,79)"></iframe>
 </body>
 </html>

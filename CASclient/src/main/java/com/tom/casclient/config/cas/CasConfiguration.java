@@ -41,7 +41,8 @@ public class CasConfiguration extends WebSecurityConfigurerAdapter {
     /*定义安全策略*/
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
+        http.headers().frameOptions().disable()
+                .and()
                 .authorizeRequests()//配置安全策略
                 .antMatchers("/","/index","/mgmt/**").permitAll()//定义/请求不需要验证
                 .anyRequest().authenticated()//其余的所有请求都需要验证

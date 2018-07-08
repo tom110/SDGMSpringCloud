@@ -28,9 +28,42 @@ public class HomeController {
     }
 
     @GetMapping(value = "/main")
-    public String main(ModelMap modelMap) {
-        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        modelMap.addAttribute("user", user);
+    public String main() {
         return "main";
+    }
+
+    @GetMapping(value = "/globleImages")
+    public String globleImages() {
+        return "globleImages";
+    }
+
+    @GetMapping(value = "/flood")
+    public String flood() {
+        return "flood";
+    }
+
+    @GetMapping(value = "/cutFill")
+    public String cutFill() {
+        return "cutFill";
+    }
+
+    @GetMapping(value = "/cutting")
+    public String cutting() {
+        return "cutting";
+    }
+
+    @GetMapping(value = "/showModel")
+    public String showModel() {
+        return "showModel";
+    }
+
+    @GetMapping(value = "/pipe")
+    public String pipe() {
+        return "pipe";
+    }
+
+    @GetMapping(value = "/attrs")
+    public String attrs() {
+        return "attrs";
     }
 }

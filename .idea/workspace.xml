@@ -2,7 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d928297-662e-4b7d-88a6-e7e2d523ecbd" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b9e2cc56-7f98-47fd-87e2-2ea87493a9dd.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/b9e2cc56-7f98-47fd-87e2-2ea87493a9dd.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/CAS-server" afterPath="$PROJECT_DIR$/CAS-server" />
+      <change beforePath="$PROJECT_DIR$/CASclient/src/main/java/com/tom/casclient/config/cas/CasConfiguration.java" afterPath="$PROJECT_DIR$/CASclient/src/main/java/com/tom/casclient/config/cas/CasConfiguration.java" />
+      <change beforePath="$PROJECT_DIR$/CASclient/src/main/java/com/tom/casclient/controller/HomeController.java" afterPath="$PROJECT_DIR$/CASclient/src/main/java/com/tom/casclient/controller/HomeController.java" />
+      <change beforePath="$PROJECT_DIR$/CASclient/src/main/resources/static/AdminLTE/dist/js/function.js" afterPath="$PROJECT_DIR$/CASclient/src/main/resources/static/AdminLTE/dist/js/function.js" />
+      <change beforePath="$PROJECT_DIR$/CASclient/src/main/resources/static/AdminLTE/dist/js/my.js" afterPath="$PROJECT_DIR$/CASclient/src/main/resources/static/AdminLTE/dist/js/my.js" />
+      <change beforePath="$PROJECT_DIR$/CASclient/src/main/resources/templates/main.html" afterPath="$PROJECT_DIR$/CASclient/src/main/resources/templates/main.html" />
+      <change beforePath="$PROJECT_DIR$/CASclient/target/classes/com/tom/casclient/config/cas/CasConfiguration.class" afterPath="$PROJECT_DIR$/CASclient/target/classes/com/tom/casclient/config/cas/CasConfiguration.class" />
+      <change beforePath="$PROJECT_DIR$/CASclient/target/classes/com/tom/casclient/controller/HomeController.class" afterPath="$PROJECT_DIR$/CASclient/target/classes/com/tom/casclient/controller/HomeController.class" />
+      <change beforePath="$PROJECT_DIR$/CASclient/target/classes/static/AdminLTE/dist/js/function.js" afterPath="$PROJECT_DIR$/CASclient/target/classes/static/AdminLTE/dist/js/function.js" />
+      <change beforePath="$PROJECT_DIR$/CASclient/target/classes/static/AdminLTE/dist/js/my.js" afterPath="$PROJECT_DIR$/CASclient/target/classes/static/AdminLTE/dist/js/my.js" />
+      <change beforePath="$PROJECT_DIR$/CASclient/target/classes/templates/main.html" afterPath="$PROJECT_DIR$/CASclient/target/classes/templates/main.html" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/tom/auth/config/AuthorizationServerConfig.java" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/tom/auth/config/AuthorizationServerConfig.java" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/resources/schema.sql" afterPath="$PROJECT_DIR$/auth-service/src/main/resources/schema1.sql" />
+      <change beforePath="$PROJECT_DIR$/auth-service/target/classes/com/tom/auth/config/AuthorizationServerConfig.class" afterPath="$PROJECT_DIR$/auth-service/target/classes/com/tom/auth/config/AuthorizationServerConfig.class" />
+      <change beforePath="$PROJECT_DIR$/auth-service/target/classes/schema.sql" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/config_repo" afterPath="$PROJECT_DIR$/config_repo" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -27,6 +44,11 @@
   </component>
   <component name="CompilerWorkspaceConfiguration">
     <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/SDGMSpringCloud$ZipkinApplication.coverage" NAME="ZipkinApplication Coverage Results" MODIFIED="1530519790058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.tom.zipkin.*</FILTER>
+    </SUITE>
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -61,12 +83,93 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="oauth_access_token" pinned="false" current-in-tab="false">
+        <entry file="das://table:/30e1ed1e/b9e2cc56-7f98-47fd-87e2-2ea87493a9dd/sdgm.oauth_access_token">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="oauth_client_details" pinned="false" current-in-tab="false">
+        <entry file="das://table:/30e1ed1e/b9e2cc56-7f98-47fd-87e2-2ea87493a9dd/sdgm.oauth_client_details">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="oauth_code" pinned="false" current-in-tab="false">
+        <entry file="das://table:/30e1ed1e/b9e2cc56-7f98-47fd-87e2-2ea87493a9dd/sdgm.oauth_code">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="oauth_refresh_token" pinned="false" current-in-tab="false">
+        <entry file="das://table:/30e1ed1e/b9e2cc56-7f98-47fd-87e2-2ea87493a9dd/sdgm.oauth_refresh_token">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuthorizationServerConfig.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/auth-service/src/main/java/com/tom/auth/config/AuthorizationServerConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="404">
+              <caret line="68" column="24" lean-forward="true" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="role" pinned="false" current-in-tab="false">
+        <entry file="das://table:/30e1ed1e/b9e2cc56-7f98-47fd-87e2-2ea87493a9dd/sdgm.role">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user_role" pinned="false" current-in-tab="false">
+        <entry file="das://table:/30e1ed1e/b9e2cc56-7f98-47fd-87e2-2ea87493a9dd/sdgm.user_role">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="role_authority" pinned="false" current-in-tab="false">
+        <entry file="das://table:/30e1ed1e/b9e2cc56-7f98-47fd-87e2-2ea87493a9dd/sdgm.role_authority">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users" pinned="false" current-in-tab="false">
+        <entry file="das://table:/30e1ed1e/b9e2cc56-7f98-47fd-87e2-2ea87493a9dd/sdgm.users">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="oauth_approvals" pinned="false" current-in-tab="false">
+        <entry file="das://table:/30e1ed1e/b9e2cc56-7f98-47fd-87e2-2ea87493a9dd/sdgm.oauth_approvals">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -79,44 +182,44 @@
         <option value="CSS File" />
         <option value="Interface" />
         <option value="spring-beans.schema" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>绑定成功</find>
-      <find>roleBindAuthorities</find>
-      <find>/ui/getAuthorities</find>
-      <find>/ui/deleteAuthority</find>
-      <find>/ui/createOrUpdateAuthority</find>
-      <find>DataTable()</find>
-      <find>scrollX</find>
-      <find>DataTable(</find>
-      <find>image</find>
-      <find>Jim Doe</find>
-      <find>authServiceMgrContextPath</find>
-      <find>decryptText</find>
-      <find>li</find>
-      <find>&lt;/li&gt;</find>
-      <find>heigth</find>
-      <find>Alexander Pierc</find>
-      <find>540px</find>
-      <find>MAIN NAVIGATION</find>
-      <find>img</find>
-      <find>input</find>
-      <find>a</find>
-      <find>&lt;a</find>
-      <find>checked</find>
-      <find>flood</find>
-      <find>fei</find>
       <find>bus</find>
       <find>bus/refresh</find>
       <find>@value</find>
       <find>findByName</find>
       <find>功能</find>
+      <find>模型摸</find>
+      <find>洪水</find>
+      <find>stopAnalysis</find>
+      <find>setStartPoint</find>
+      <find>foold</find>
+      <find>flood</find>
+      <find>stop</find>
+      <find>setFloodArea_start</find>
+      <find>startPointCallback</find>
+      <find>add</find>
+      <find>addPnt</find>
+      <find>alert</find>
+      <find>ABSurface</find>
+      <find>successCallback</find>
+      <find>removeCut</find>
+      <find>show</find>
+      <find>startBoomAnalysis</find>
+      <find>stopCutting</find>
+      <find>getTerr</find>
+      <find>PickModelReady</find>
+      <find>淹没</find>
+      <find>createpipeexeCut</find>
+      <find>爆炸</find>
+      <find>getE</find>
+      <find>my.js</find>
     </findStrings>
     <replaceStrings>
       <replace>../css/fonts/</replace>
@@ -143,15 +246,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/auth-service/src/main/java/com/tom/auth/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/CASclient/src/main/java/com/tom/casclient/controller/OauthServiceController.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/auth-service/src/main/java/com/tom/auth/config/ResourceServerConfig.java" />
-        <option value="$PROJECT_DIR$/auth-rest-service/pom.xml" />
-        <option value="$PROJECT_DIR$/auth-rest-service/src/main/java/com/tom/authrest/domian/Authority.java" />
-        <option value="$PROJECT_DIR$/auth-rest-service/src/main/java/com/tom/authrest/domian/OauthClientDetails.java" />
-        <option value="$PROJECT_DIR$/auth-rest-service/src/main/java/com/tom/authrest/domian/Role.java" />
-        <option value="$PROJECT_DIR$/auth-rest-service/src/main/java/com/tom/authrest/domian/Users.java" />
         <option value="$PROJECT_DIR$/auth-rest-service/src/main/java/com/tom/authrest/repository/AuthorityRepository.java" />
         <option value="$PROJECT_DIR$/auth-rest-service/src/main/java/com/tom/authrest/repository/OauthClientDetailsRepository.java" />
         <option value="$PROJECT_DIR$/auth-rest-service/src/main/java/com/tom/authrest/repository/RoleRepository.java" />
@@ -164,16 +258,13 @@
         <option value="$PROJECT_DIR$/auth-rest-service/src/main/java/com/tom/authrest/services/UsersServiceImpl.java" />
         <option value="$PROJECT_DIR$/auth-rest-service/src/main/java/com/tom/authrest/services/AuthorityService.java" />
         <option value="$PROJECT_DIR$/auth-rest-service/src/main/java/com/tom/authrest/services/AuthorityServiceImpl.java" />
-        <option value="$PROJECT_DIR$/CASclient/src/main/java/com/tom/casclient/controller/HomeController.java" />
         <option value="$PROJECT_DIR$/CASclient/src/main/java/com/tom/casclient/config/oauth2/OAuth2FeignRequestInterceptor.java" />
         <option value="$PROJECT_DIR$/CASclient/src/main/resources/META-INF/spring.factories" />
         <option value="$PROJECT_DIR$/CASclient/pom.xml" />
         <option value="$PROJECT_DIR$/CASclient/src/main/java/com/tom/casclient/config/oauth2/OAuth2FeignAutoConfiguration.java" />
-        <option value="$PROJECT_DIR$/auth-service/src/main/java/com/tom/auth/config/AuthorizationServerConfig.java" />
         <option value="$PROJECT_DIR$/auth-rest-service/src/main/java/com/tom/authrest/controller/OauthServiceController.java" />
         <option value="$PROJECT_DIR$/CASclient/src/main/java/com/tom/casclient/client/AuthRestService.java" />
         <option value="$PROJECT_DIR$/CASclient/src/main/java/com/tom/casclient/config/cas/CasUserDetailsService.java" />
-        <option value="$PROJECT_DIR$/CASclient/src/main/java/com/tom/casclient/config/cas/CasConfiguration.java" />
         <option value="$PROJECT_DIR$/CASclient/src/main/resources/bootstrap.yml" />
         <option value="$PROJECT_DIR$/auth-service/src/main/java/com/tom/auth/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/CASclient/src/main/java/com/tom/casclient/config/cas/CasProperties.java" />
@@ -181,7 +272,6 @@
         <option value="$PROJECT_DIR$/config_repo/config-repo/auth-client-mgr.yml" />
         <option value="$PROJECT_DIR$/config_repo/config-repo/auth-rest-service.yml" />
         <option value="$PROJECT_DIR$/config_repo/config-repo/auth-service.yml" />
-        <option value="$USER_HOME$/Desktop/BS3D_wjb_test/E01draw2DGraphicFeature.htm" />
         <option value="$PROJECT_DIR$/auth-client-mgr/src/main/resources/templates/authtools.html" />
         <option value="$PROJECT_DIR$/CASclient/src/main/java/com/tom/casclient/config/oauth2/ResourceConfig.java" />
         <option value="$PROJECT_DIR$/CASclient/src/main/java/com/tom/casclient/config/oauth2/TokenPicker.java" />
@@ -190,10 +280,23 @@
         <option value="$PROJECT_DIR$/auth-client-mgr/src/main/java/com/tom/clientmgr/services/UsersServiceImpl.java" />
         <option value="$PROJECT_DIR$/auth-client-mgr/src/main/java/com/tom/clientmgr/controller/AuthTools.java" />
         <option value="D:/mapgis_env/ComprehensiveForWeb3D(20180504)/demos/MapLoading/E06LoadTianDiTuData.htm" />
-        <option value="$PROJECT_DIR$/config_repo/config-repo/cas-client.yml" />
-        <option value="$PROJECT_DIR$/CASclient/src/main/resources/templates/main.html" />
-        <option value="$PROJECT_DIR$/CASclient/src/main/resources/static/AdminLTE/dist/js/my.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/CASclient/src/main/resources/templates/globleImages.html" />
+        <option value="$PROJECT_DIR$/auth-service/src/main/resources/schema.sql" />
+        <option value="$PROJECT_DIR$/CASclient/src/main/java/com/tom/casclient/config/cas/CasConfiguration.java" />
+        <option value="$PROJECT_DIR$/CASclient/src/main/resources/templates/cutFill.html" />
+        <option value="$PROJECT_DIR$/CASclient/src/main/resources/templates/flood.html" />
+        <option value="$PROJECT_DIR$/CASclient/src/main/resources/static/AdminLTE/dist/js/function.js" />
+        <option value="$PROJECT_DIR$/CASclient/src/main/resources/templates/cutting.html" />
+        <option value="$USER_HOME$/Desktop/BS3D_wjb_test/E01draw2DGraphicFeature.htm" />
+        <option value="$PROJECT_DIR$/config_repo/config-repo/cas-client.yml" />
+        <option value="$PROJECT_DIR$/CASclient/src/main/resources/templates/pipe.html" />
+        <option value="$PROJECT_DIR$/CASclient/src/main/java/com/tom/casclient/controller/HomeController.java" />
+        <option value="$PROJECT_DIR$/CASclient/src/main/resources/templates/attrs.html" />
+        <option value="$PROJECT_DIR$/CASclient/src/main/resources/templates/main.html" />
+        <option value="$PROJECT_DIR$/CASclient/src/main/resources/templates/showModel.html" />
+        <option value="$PROJECT_DIR$/CASclient/src/main/resources/static/AdminLTE/dist/js/my.js" />
+        <option value="$PROJECT_DIR$/auth-service/src/main/java/com/tom/auth/config/AuthorizationServerConfig.java" />
       </list>
     </option>
   </component>
@@ -217,10 +320,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-11" />
-    <option name="y" value="-11" />
-    <option name="width" value="1942" />
-    <option name="height" value="1042" />
+    <option name="x" value="-2411" />
+    <option name="y" value="111" />
+    <option name="width" value="2422" />
+    <option name="height" value="1312" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -265,7 +368,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -273,13 +375,113 @@
               <item name="SDGMSpringCloud" type="b2602c69:ProjectViewProjectNode" />
               <item name="SDGMSpringCloud" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="SDGMSpringCloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SDGMSpringCloud" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDGMSpringCloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SDGMSpringCloud" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDGMSpringCloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SDGMSpringCloud" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDGMSpringCloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SDGMSpringCloud" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDGMSpringCloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SDGMSpringCloud" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDGMSpringCloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SDGMSpringCloud" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDGMSpringCloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SDGMSpringCloud" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDGMSpringCloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SDGMSpringCloud" type="462c0819:PsiDirectoryNode" />
+              <item name="CASclient" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDGMSpringCloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SDGMSpringCloud" type="462c0819:PsiDirectoryNode" />
+              <item name="CASclient" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDGMSpringCloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SDGMSpringCloud" type="462c0819:PsiDirectoryNode" />
+              <item name="CASclient" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDGMSpringCloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SDGMSpringCloud" type="462c0819:PsiDirectoryNode" />
+              <item name="CASclient" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDGMSpringCloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SDGMSpringCloud" type="462c0819:PsiDirectoryNode" />
+              <item name="CASclient" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="casclient" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDGMSpringCloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SDGMSpringCloud" type="462c0819:PsiDirectoryNode" />
+              <item name="config_repo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDGMSpringCloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SDGMSpringCloud" type="462c0819:PsiDirectoryNode" />
+              <item name="config_repo" type="462c0819:PsiDirectoryNode" />
+              <item name="config-repo" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -304,13 +506,6 @@
     <property name="extract.method.default.visibility" value="private" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Spring Cloud\SDGMSpringCloud\auth-service\src\main\resources\static\images" />
-      <recent name="E:\Spring Cloud\SDGMSpringCloud\auth-service\src\main\resources\templates" />
-      <recent name="E:\Spring Cloud\SDGMProject\auth-client-mgr\src\main\java\com\tom\clientmgr" />
-      <recent name="E:\Spring Cloud\SDGMProject\auth-service\src\main\resources\static" />
-      <recent name="E:\Spring Cloud\SDGMProject\config\src\main\resources" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.tom.authrestserver" />
       <recent name="com.tom.authrest" />
@@ -318,16 +513,23 @@
       <recent name="com.tom.casclient" />
       <recent name="com.tom.auth" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.tom.auth.controller" />
-      <recent name="com.tom.clientmgr.util" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Spring Cloud\SDGMSpringCloud\CASclient\src\main\resources\templates" />
       <recent name="E:\Spring Cloud\SDGMSpringCloud\CASclient\src\main\resources\static\AdminLTE\dist\js" />
       <recent name="E:\Spring Cloud\SDGMSpringCloud\auth-rest-service\src\main\java\com\tom\authrest" />
       <recent name="E:\Spring Cloud\SDGMSpringCloud\CASclient\src\main\resources\static" />
       <recent name="E:\Spring Cloud\SDGMSpringCloud\CASclient\src\main\resources" />
-      <recent name="E:\Spring Cloud\SDGMSpringCloud\CASclient\src\main\java\com\tom\casclient\config\cas" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.tom.auth.controller" />
+      <recent name="com.tom.clientmgr.util" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Spring Cloud\SDGMSpringCloud\auth-service\src\main\resources\static\images" />
+      <recent name="E:\Spring Cloud\SDGMSpringCloud\auth-service\src\main\resources\templates" />
+      <recent name="E:\Spring Cloud\SDGMProject\auth-client-mgr\src\main\java\com\tom\clientmgr" />
+      <recent name="E:\Spring Cloud\SDGMProject\auth-service\src\main\resources\static" />
+      <recent name="E:\Spring Cloud\SDGMProject\config\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -346,9 +548,9 @@
         </RuleState>
       </list>
     </option>
-    <option name="contentProportion" value="0.33701658" />
+    <option name="contentProportion" value="0.24585153" />
   </component>
-  <component name="RunManager" selected="Spring Boot.AuthApplication">
+  <component name="RunManager" selected="Spring Boot.CASClientApplication">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -498,19 +700,19 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Spring Boot.ClientMgrApplication" />
-      <item index="1" class="java.lang.String" itemvalue="Spring Boot.AuthRestApplication" />
-      <item index="2" class="java.lang.String" itemvalue="Spring Boot.GatewayApplication" />
-      <item index="3" class="java.lang.String" itemvalue="Spring Boot.CASClientApplication" />
-      <item index="4" class="java.lang.String" itemvalue="Spring Boot.AuthApplication" />
+      <item index="0" class="java.lang.String" itemvalue="Spring Boot.GatewayApplication" />
+      <item index="1" class="java.lang.String" itemvalue="Spring Boot.AuthApplication" />
+      <item index="2" class="java.lang.String" itemvalue="Spring Boot.ClientMgrApplication" />
+      <item index="3" class="java.lang.String" itemvalue="Spring Boot.AuthRestApplication" />
+      <item index="4" class="java.lang.String" itemvalue="Spring Boot.CASClientApplication" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Spring Boot.CASClientApplication" />
-        <item index="1" class="java.lang.String" itemvalue="Spring Boot.ClientMgrApplication" />
-        <item index="2" class="java.lang.String" itemvalue="Spring Boot.AuthApplication" />
-        <item index="3" class="java.lang.String" itemvalue="Spring Boot.GatewayApplication" />
-        <item index="4" class="java.lang.String" itemvalue="Spring Boot.AuthRestApplication" />
+        <item index="0" class="java.lang.String" itemvalue="Spring Boot.AuthApplication" />
+        <item index="1" class="java.lang.String" itemvalue="Spring Boot.CASClientApplication" />
+        <item index="2" class="java.lang.String" itemvalue="Spring Boot.AuthRestApplication" />
+        <item index="3" class="java.lang.String" itemvalue="Spring Boot.ClientMgrApplication" />
+        <item index="4" class="java.lang.String" itemvalue="Spring Boot.GatewayApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -559,7 +761,12 @@
       <workItem from="1530164551574" duration="310000" />
       <workItem from="1530170042123" duration="3695000" />
       <workItem from="1530232640870" duration="25013000" />
-      <workItem from="1530492415386" duration="158000" />
+      <workItem from="1530492415386" duration="10318000" />
+      <workItem from="1530509879169" duration="3513000" />
+      <workItem from="1530519638189" duration="14840000" />
+      <workItem from="1530596517634" duration="21641000" />
+      <workItem from="1530684450086" duration="34072000" />
+      <workItem from="1531014372864" duration="1700000" />
     </task>
     <servers />
   </component>
@@ -596,7 +803,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="491577000" />
+    <option name="totallyTimeSpent" value="577503000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -608,7 +815,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <frame x="-2411" y="111" width="2422" height="1312" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -617,22 +824,23 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32825112" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24892008" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26157805" sideWeight="0.4937107" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28001717" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42869955" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32825112" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289941" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32825112" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28402367" sideWeight="0.49568033" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32825112" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44753364" sideWeight="0.49568033" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32426035" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32781065" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32825112" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32735425" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289941" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2775378" sideWeight="0.4922879" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23542024" sideWeight="0.4922879" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24528302" sideWeight="0.50771207" order="5" side_tool="true" content_ui="tabs" />
@@ -642,8 +850,8 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289941" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1771012" sideWeight="0.5062893" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5103139" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289941" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
@@ -711,9 +919,13 @@
           <option name="timeStamp" value="90" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="132" />
+      <option name="time" value="134" />
     </breakpoint-manager>
     <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -771,17 +983,348 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-netflix-eureka-client/1.3.5.RELEASE/spring-cloud-netflix-eureka-client-1.3.5.RELEASE.jar!/org/springframework/cloud/netflix/eureka/EurekaClientAutoConfiguration.class">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="70" column="13" lean-forward="false" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
+        <state relative-caret-position="162">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config_repo/config-repo/application.yml">
+    <entry file="file://$PROJECT_DIR$/CASclient/src/main/resources/templates/globleImages.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="756">
+          <caret line="28" column="50" lean-forward="true" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_repo/config-repo/auth-client-mgr.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/BS3D_wjb_test/flood.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1296">
+          <caret line="48" column="54" lean-forward="false" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/30e1ed1e/b9e2cc56-7f98-47fd-87e2-2ea87493a9dd/oauth2.oauth_client_details">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/30e1ed1e/b9e2cc56-7f98-47fd-87e2-2ea87493a9dd/oauth2.oauth_client_token">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/30e1ed1e/b9e2cc56-7f98-47fd-87e2-2ea87493a9dd/oauth2.oauth_code">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/30e1ed1e/b9e2cc56-7f98-47fd-87e2-2ea87493a9dd/oauth2.oauth_refresh_token">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/30e1ed1e/b9e2cc56-7f98-47fd-87e2-2ea87493a9dd/oauth2.oauth_approvals">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/30e1ed1e/b9e2cc56-7f98-47fd-87e2-2ea87493a9dd/oauth2.oauth_access_token">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-service/src/main/resources/schema1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="762">
+          <caret line="47" column="1" lean-forward="true" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CASclient/src/main/java/com/tom/casclient/client/AuthRestService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CASclient/src/main/java/com/tom/casclient/config/cas/CasProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CASclient/src/main/java/com/tom/casclient/config/cas/CasConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-648">
+          <caret line="49" column="25" lean-forward="false" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/BS3D_wjb_test/js/function.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="659" column="22" lean-forward="true" selection-start-line="659" selection-start-column="22" selection-end-line="659" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/BS3D_wjb_test/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="47" column="74" lean-forward="false" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_repo/config-repo/cas-client.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="46" column="48" lean-forward="false" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CASclient/src/main/resources/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CASclient/src/main/resources/templates/flood.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="7" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/BS3D_wjb_test/E01draw2DGraphicFeature.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="83" column="42" lean-forward="false" selection-start-line="83" selection-start-column="33" selection-end-line="83" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CASclient/src/main/resources/static/AdminLTE/dist/js/function.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="522" column="38" lean-forward="false" selection-start-line="522" selection-start-column="38" selection-end-line="522" selection-end-column="38" />
+          <folding>
+            <marker date="1530668052481" expanded="true" signature="5666:5683" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CASclient/src/main/resources/templates/pipe.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="36" column="27" lean-forward="true" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CASclient/src/main/resources/static/AdminLTE/dist/js/globe.all-二次开发.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2087">
+          <caret line="341" column="39" lean-forward="true" selection-start-line="341" selection-start-column="39" selection-end-line="341" selection-end-column="39" />
+          <folding>
+            <marker date="1529639304807" expanded="true" signature="10912:10975" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CASclient/src/main/resources/templates/cutFill.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1998">
+          <caret line="74" column="103" lean-forward="false" selection-start-line="74" selection-start-column="103" selection-end-line="74" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CASclient/src/main/java/com/tom/casclient/controller/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1107">
+          <caret line="64" column="33" lean-forward="false" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CASclient/src/main/resources/templates/attrs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="21" column="58" lean-forward="false" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CASclient/src/main/resources/templates/cutting.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1161">
+          <caret line="43" column="7" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="43" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CASclient/src/main/resources/templates/showModel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="22" column="17" lean-forward="false" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CASclient/src/main/resources/templates/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1917">
+          <caret line="71" column="26" lean-forward="false" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
+          <folding>
+            <element signature="n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#section#0;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#ul#0;n#section#0;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#li#3;n#ul#0;n#section#0;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#ul#0;n#li#3;n#ul#0;n#section#0;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CASclient/src/main/resources/static/AdminLTE/dist/js/my.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="437" column="9" lean-forward="false" selection-start-line="437" selection-start-column="9" selection-end-line="437" selection-end-column="9" />
+          <folding>
+            <element signature="n#!!block;n#init#0" expanded="false" />
+            <element signature="e#931#933#0" expanded="false" />
+            <element signature="e#2883#2891#0" expanded="false" />
+            <element signature="e#2981#3009#0" expanded="false" />
+            <element signature="n#!!block;n#addMap#0" expanded="false" />
+            <element signature="e#3060#3072#0" expanded="false" />
+            <element signature="e#3216#3274#0" expanded="false" />
+            <element signature="e#3395#3406#0" expanded="false" />
+            <element signature="n#!!block;n#addMap1#0" expanded="false" />
+            <element signature="e#3597#3676#0" expanded="false" />
+            <element signature="e#3708#3775#0" expanded="false" />
+            <element signature="n#!!block;n#addMap2#0" expanded="false" />
+            <element signature="e#3986#4065#0" expanded="false" />
+            <element signature="e#4097#4155#0" expanded="false" />
+            <element signature="n#!!block;n#addDEM#0" expanded="false" />
+            <element signature="e#4355#4392#0" expanded="false" />
+            <element signature="e#4500#4547#0" expanded="false" />
+            <element signature="n#!!block;n#showABSurface#0" expanded="false" />
+            <element signature="n#!!block;n#ABSurface#0" expanded="false" />
+            <element signature="n#!!block;n#showFirst#0" expanded="false" />
+            <element signature="e#5049#5128#0" expanded="false" />
+            <element signature="e#5160#5218#0" expanded="false" />
+            <element signature="n#!!block;n#showSecond#0" expanded="false" />
+            <element signature="e#5433#5512#0" expanded="false" />
+            <element signature="e#5544#5602#0" expanded="false" />
+            <element signature="n#!!block;n#ABSurfaceexeCut#0" expanded="false" />
+            <element signature="e#6073#6095#0" expanded="false" />
+            <element signature="e#6272#6301#0" expanded="false" />
+            <element signature="n#!!block;n#removeCut#0" expanded="false" />
+            <element signature="e#6385#6428#0" expanded="false" />
+            <element signature="n#!!block;n#stopCuttingAnaysis#0" expanded="false" />
+            <element signature="n#!!block;n#showPipeSurface#0" expanded="false" />
+            <element signature="n#!!block;n#AddPipePnt#0" expanded="false" />
+            <element signature="e#7103#7360#0" expanded="false" />
+            <element signature="e#7307#7347#0" expanded="false" />
+            <element signature="n#!!block;n#createpipe#0" expanded="false" />
+            <element signature="e#7407#8431#0" expanded="false" />
+            <element signature="e#7738#7756#0" expanded="false" />
+            <element signature="e#8378#8418#0" expanded="false" />
+            <element signature="n#!!block;n#createpipeByDepthHeight#0" expanded="false" />
+            <element signature="e#8922#8940#0" expanded="false" />
+            <element signature="n#!!block;n#createpipeexeCut#0" expanded="false" />
+            <element signature="e#9958#10012#0" expanded="false" />
+            <element signature="n#!!block;n#showPipeFrist#0" expanded="false" />
+            <element signature="e#10502#10581#0" expanded="false" />
+            <element signature="e#10613#10671#0" expanded="false" />
+            <element signature="n#!!block;n#showPipeSecond#0" expanded="false" />
+            <element signature="e#10898#10977#0" expanded="false" />
+            <element signature="e#11009#11067#0" expanded="false" />
+            <element signature="n#!!block;n#GetGemoPnt#0" expanded="false" />
+            <element signature="e#12929#13514#0" expanded="false" />
+            <element signature="e#12955#13227#0" expanded="false" />
+            <element signature="e#13137#13189#0" expanded="false" />
+            <element signature="e#13233#13507#0" expanded="false" />
+            <element signature="e#13415#13467#0" expanded="false" />
+            <element signature="n#!!block;n#addGraphic#0" expanded="false" />
+            <element signature="e#14027#14146#0" expanded="false" />
+            <element signature="n#!!block;n#getUuid#0" expanded="false" />
+            <element signature="e#14442#14527#0" expanded="false" />
+            <element signature="e#14533#14832#0" expanded="false" />
+            <element signature="e#14663#14826#0" expanded="false" />
+            <element signature="e#14691#14816#0" expanded="false" />
+            <element signature="n#!!block;n#BoomAnalysis#0" expanded="false" />
+            <element signature="e#14939#14999#0" expanded="false" />
+            <element signature="e#15003#15061#0" expanded="false" />
+            <element signature="n#!!block;n#startBoomAnalysis#0" expanded="false" />
+            <element signature="n#!!block;n#stopBoomAnalysis#0" expanded="false" />
+            <element signature="n#!!block;n#addcutModel#0" expanded="false" />
+            <element signature="e#15764#15801#0" expanded="false" />
+            <element signature="n#!!block;n#cutfillanalysis1#0" expanded="false" />
+            <element signature="n#!!block;n#getFillCutResult#0" expanded="false" />
+            <element signature="e#17135#17418#0" expanded="false" />
+            <element signature="e#17365#17404#0" expanded="false" />
+            <element signature="n#!!block;n#flood1#0" expanded="false" />
+            <element signature="n#!!block;n#flood#0" expanded="false" />
+            <element signature="n#!!block;n#startPointCallback#0" expanded="false" />
+            <element signature="e#18284#20194#0" expanded="false" />
+            <element signature="e#18315#18480#0" expanded="false" />
+            <element signature="e#18507#18666#0" expanded="false" />
+            <element signature="e#18693#20060#0" expanded="false" />
+            <element signature="e#18930#18936#0" expanded="false" />
+            <element signature="e#20141#20182#0" expanded="false" />
+            <element signature="e#20235#20268#0" expanded="false" />
+            <element signature="n#!!block;n#stopAnalysis#0" expanded="false" />
+            <element signature="e#20634#20706#0" expanded="false" />
+            <element signature="n#!!block;n#secondPnt#0" expanded="false" />
+            <element signature="n#!!block;n#addPnt#0" expanded="false" />
+            <element signature="n#!!block;n#add3Dpoint#0" expanded="false" />
+            <element signature="e#23226#23258#0" expanded="false" />
+            <element signature="n#!!block;n#removeAll3DElem#0" expanded="false" />
+            <element signature="n#!!block;n#findAttr#0" expanded="false" />
+            <element signature="e#23441#23619#0" expanded="false" />
+            <element signature="e#23623#23804#0" expanded="false" />
+            <element signature="n#!!block;n#PickModelReady#0" expanded="false" />
+            <element signature="n#!!block;n#DataQuery#0" expanded="false" />
+            <element signature="e#24773#25042#0" expanded="false" />
+            <element signature="e#24814#25036#0" expanded="false" />
+            <element signature="e#24971#25019#0" expanded="false" />
+            <element signature="n#!!block;n#queryPolygonsCallback_modle#0" expanded="false" />
+            <element signature="e#25229#25807#0" expanded="false" />
+            <element signature="e#25273#25767#0" expanded="false" />
+            <element signature="e#25335#25405#0" expanded="false" />
+            <element signature="n#!!block;n#sparkModel#0" expanded="false" />
+            <element signature="n#!!block;n#stopPickModelReady#0" expanded="false" />
+            <element signature="n#!!block;n#PickModel#0" expanded="false" />
+            <element signature="n#!!block;n#modelQuery#0" expanded="false" />
+            <element signature="e#27140#27410#0" expanded="false" />
+            <element signature="e#27164#27404#0" expanded="false" />
+            <element signature="e#27338#27386#0" expanded="false" />
+            <element signature="n#!!block;n#queryPolygonsCallback_M#0" expanded="false" />
+            <element signature="e#27484#27529#0" expanded="false" />
+            <element signature="n#!!block;n#stopPickModel_M#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -809,15 +1352,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/monitor/src/main/java/com/tom/monitor/config/MonitorConfig.java">
+    <entry file="file://$PROJECT_DIR$/zipkin/src/main/java/com/tom/zipkin/ZipkinApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-351">
+        <state relative-caret-position="162">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zipkin/src/main/java/com/tom/zipkin/ZipkinApplication.java">
+    <entry file="file://$PROJECT_DIR$/gateway/src/main/java/com/tom/gateway/GatewayApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-service/src/main/java/com/tom/auth/AuthApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
@@ -833,19 +1384,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/src/main/java/com/tom/gateway/GatewayApplication.java">
+    <entry file="file://$PROJECT_DIR$/auth-rest-service/src/main/java/com/tom/authrest/AuthRestApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        <state relative-caret-position="243">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CASclient/src/main/java/com/tom/casclient/CASClientApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="135">
+          <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth-service/src/main/resources/bootstrap.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_repo/config-repo/auth-service.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="82" lean-forward="true" selection-start-line="6" selection-start-column="82" selection-end-line="6" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/30e1ed1e/b9e2cc56-7f98-47fd-87e2-2ea87493a9dd/sdgm.role">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/30e1ed1e/b9e2cc56-7f98-47fd-87e2-2ea87493a9dd/sdgm.user_role">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/30e1ed1e/b9e2cc56-7f98-47fd-87e2-2ea87493a9dd/sdgm.role_authority">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/30e1ed1e/b9e2cc56-7f98-47fd-87e2-2ea87493a9dd/sdgm.users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/30e1ed1e/b9e2cc56-7f98-47fd-87e2-2ea87493a9dd/sdgm.oauth_approvals">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/30e1ed1e/b9e2cc56-7f98-47fd-87e2-2ea87493a9dd/sdgm.oauth_access_token">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -856,336 +1465,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/auth-service/src/main/java/com/tom/auth/AuthApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-          <folding />
+    <entry file="das://table:/30e1ed1e/b9e2cc56-7f98-47fd-87e2-2ea87493a9dd/sdgm.oauth_code">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config_repo/config-repo/auth-client-mgr.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+    <entry file="das://table:/30e1ed1e/b9e2cc56-7f98-47fd-87e2-2ea87493a9dd/sdgm.oauth_refresh_token">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-context/1.2.4.RELEASE/spring-cloud-context-1.2.4.RELEASE.jar!/org/springframework/cloud/context/config/annotation/RefreshScope.class">
+    <entry file="file://$PROJECT_DIR$/auth-service/src/main/java/com/tom/auth/config/AuthorizationServerConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="19" column="30" lean-forward="false" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.3.10.RELEASE/spring-beans-4.3.10.RELEASE.jar!/org/springframework/beans/factory/annotation/Value.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.3.10.RELEASE/spring-core-4.3.10.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.3.10.RELEASE/spring-aop-4.3.10.RELEASE.jar!/org/springframework/aop/support/DelegatingIntroductionInterceptor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.3.10.RELEASE/spring-aop-4.3.10.RELEASE.jar!/org/springframework/aop/framework/ReflectiveMethodInvocation.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="71" column="13" lean-forward="true" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.3.10.RELEASE/spring-aop-4.3.10.RELEASE.jar!/org/springframework/aop/framework/CglibAopProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="515" column="0" lean-forward="false" selection-start-line="515" selection-start-column="0" selection-end-line="515" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/github/openfeign/feign-core/9.5.0/feign-core-9.5.0.jar!/feign/SynchronousMethodHandler.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.2.3.RELEASE/spring-security-web-4.2.3.RELEASE.jar!/org/springframework/security/web/context/SecurityContextPersistenceFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="33" column="123" lean-forward="false" selection-start-line="33" selection-start-column="123" selection-end-line="33" selection-end-column="123" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.2.3.RELEASE/spring-security-web-4.2.3.RELEASE.jar!/org/springframework/security/web/FilterChainProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.10.RELEASE/spring-web-4.3.10.RELEASE.jar!/org/springframework/web/filter/RequestContextFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/session/spring-session/1.3.1.RELEASE/spring-session-1.3.1.RELEASE.jar!/org/springframework/session/web/http/SessionRepositoryFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="63" column="157" lean-forward="false" selection-start-line="63" selection-start-column="157" selection-end-line="63" selection-end-column="157" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/session/spring-session/1.3.1.RELEASE/spring-session-1.3.1.RELEASE.jar!/org/springframework/session/web/http/OncePerRequestFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-sleuth-core/1.2.5.RELEASE/spring-cloud-sleuth-core-1.2.5.RELEASE.jar!/org/springframework/cloud/sleuth/instrument/web/TraceFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="144" column="0" lean-forward="false" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-actuator/1.5.6.RELEASE/spring-boot-actuator-1.5.6.RELEASE.jar!/org/springframework/boot/actuate/autoconfigure/MetricsFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.10.RELEASE/spring-web-4.3.10.RELEASE.jar!/org/springframework/web/filter/OncePerRequestFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.16/tomcat-embed-core-8.5.16.jar!/org/apache/catalina/core/ApplicationFilterChain.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.16/tomcat-embed-core-8.5.16.jar!/org/apache/catalina/core/StandardWrapperValve.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="204" column="0" lean-forward="false" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.16/tomcat-embed-core-8.5.16.jar!/org/apache/catalina/core/StandardContextValve.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.16/tomcat-embed-core-8.5.16.jar!/org/apache/catalina/authenticator/AuthenticatorBase.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="317" column="0" lean-forward="false" selection-start-line="317" selection-start-column="0" selection-end-line="317" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.16/tomcat-embed-core-8.5.16.jar!/org/apache/catalina/core/StandardHostValve.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1184">
-          <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CASclient/src/main/java/com/tom/casclient/config/oauth2/ResourceConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="24" column="9" lean-forward="false" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CASclient/src/main/java/com/tom/casclient/config/oauth2/TokenPicker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CASclient/src/main/java/com/tom/casclient/config/oauth2/MyRequestInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="18" column="55" lean-forward="false" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-rest-service/src/main/java/com/tom/authrest/AuthRestApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-client-mgr/src/main/java/com/tom/clientmgr/services/UsersService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="15" column="46" lean-forward="false" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-client-mgr/src/main/java/com/tom/clientmgr/repository/UsersRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-service/src/main/java/com/tom/auth/service/CustomUserDetailsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="29" column="23" lean-forward="true" selection-start-line="23" selection-start-column="8" selection-end-line="29" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-client-mgr/src/main/java/com/tom/clientmgr/services/UsersServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="68" column="32" lean-forward="true" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth-client-mgr/src/main/java/com/tom/clientmgr/controller/AuthTools.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CASclient/src/main/resources/static/AdminLTE/dist/js/r_TooltipControl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config_repo/config-repo/cas-client.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="46" column="48" lean-forward="true" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/mapgis_env/ComprehensiveForWeb3D(20180504)/demos/LabelManager/E02pickLabel.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2402">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/mapgis_env/ComprehensiveForWeb3D(20180504)/demos/LabelManager/E01drawLabel.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6264">
-          <caret line="86" column="54" lean-forward="true" selection-start-line="86" selection-start-column="54" selection-end-line="86" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CASclient/src/main/resources/templates/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5400">
-          <caret line="200" column="37" lean-forward="false" selection-start-line="200" selection-start-column="37" selection-end-line="200" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/mapgis_env/ComprehensiveForWeb3D(20180504)/demos/MapLoading/E06LoadTianDiTuData.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-113">
-          <caret line="29" column="30" lean-forward="true" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/E02pickLabel.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1269">
-          <caret line="47" column="68" lean-forward="false" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CASclient/src/main/resources/static/AdminLTE/dist/js/my.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="80" column="1" lean-forward="true" selection-start-line="80" selection-start-column="1" selection-end-line="80" selection-end-column="1" />
-          <folding>
-            <element signature="e#2255#2263#0" expanded="false" />
-            <element signature="n#!!block;n#addMap1#0" expanded="false" />
-            <element signature="e#2830#2909#0" expanded="false" />
-            <element signature="e#2941#3008#0" expanded="false" />
-            <element signature="n#!!block;n#addMap2#0" expanded="false" />
-            <element signature="e#3218#3297#0" expanded="false" />
-            <element signature="e#3329#3387#0" expanded="false" />
-            <element signature="n#!!block;n#addDEM#0" expanded="false" />
-            <element signature="e#3587#3624#0" expanded="false" />
-            <element signature="e#3735#3782#0" expanded="false" />
-            <element signature="n#!!block;n#ABSurface#0" expanded="false" />
-            <element signature="n#!!block;n#removeCut#0" expanded="false" />
-            <element signature="e#4022#4065#0" expanded="false" />
-            <element signature="n#!!block;n#getUuid#0" expanded="false" />
-            <element signature="e#4311#4396#0" expanded="false" />
-            <element signature="e#4402#4701#0" expanded="false" />
-            <element signature="e#4532#4695#0" expanded="false" />
-            <element signature="e#4560#4685#0" expanded="false" />
-            <element signature="n#!!block;n#ABSurfaceexeCut#0" expanded="false" />
-            <element signature="n#!!block;n#startBoomAnalysis#0" expanded="false" />
-            <element signature="n#!!block;n#stopBoomAnalysis#0" expanded="false" />
-            <element signature="n#!!block;n#createpipe#0" expanded="false" />
-            <element signature="e#6891#6909#0" expanded="false" />
-            <element signature="n#!!block;n#createpipeexeCut#0" expanded="false" />
-            <element signature="n#!!block;n#addcutModel#0" expanded="false" />
-            <element signature="e#8225#8262#0" expanded="false" />
-            <element signature="n#!!block;n#addPnt#0" expanded="false" />
-            <element signature="n#!!block;n#add3Dpoint#0" expanded="false" />
-            <element signature="e#8988#9020#0" expanded="false" />
-            <element signature="n#!!block;n#removeAll3DElem#0" expanded="false" />
-            <element signature="n#!!block;n#PickModelReady#0" expanded="false" />
-            <element signature="n#!!block;n#DataQuery#0" expanded="false" />
-            <element signature="e#10002#10272#0" expanded="false" />
-            <element signature="e#10043#10266#0" expanded="false" />
-            <element signature="e#10200#10248#0" expanded="false" />
-            <element signature="n#!!block;n#queryPolygonsCallback_modle#0" expanded="false" />
-            <element signature="e#10350#10655#0" expanded="false" />
-            <element signature="n#!!block;n#stopPickModelReady#0" expanded="false" />
-            <element signature="n#!!block;n#PickModel#0" expanded="false" />
-            <element signature="n#!!block;n#modelQuery#0" expanded="false" />
-            <element signature="e#11726#11996#0" expanded="false" />
-            <element signature="e#11750#11990#0" expanded="false" />
-            <element signature="e#11924#11972#0" expanded="false" />
-            <element signature="n#!!block;n#queryPolygonsCallback_M#0" expanded="false" />
-            <element signature="e#12070#12151#0" expanded="false" />
-            <element signature="n#!!block;n#stopPickModel_M#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state relative-caret-position="404">
+          <caret line="68" column="24" lean-forward="true" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
           <folding />
         </state>
       </provider>

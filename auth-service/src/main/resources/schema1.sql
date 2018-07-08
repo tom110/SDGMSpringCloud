@@ -31,3 +31,21 @@ CREATE TABLE `oauth_refresh_token` (
   `token` blob,
   `authentication` blob
 );
+
+DROP TABLE IF EXISTS `oauth_approvals`;
+CREATE TABLE oauth_approvals
+(
+  `userid` varchar(256), -- 登录的用户名
+  `clientid` varchar(256), -- 客户端ID
+  `scope` varchar(256), -- 申请的权限
+  `status` varchar(10), -- 状态（Approve或Deny）
+  `expiresat` TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- 过期时间
+  `lastmodifiedat` TIMESTAMP DEFAULT CURRENT_TIMESTAMP -- 最终修改时间
+);
+
+DROP TABLE IF EXISTS `oauth_code`;
+CREATE TABLE `oauth_code`
+(
+  `code` varchar(256), -- 授权码(未加密)
+  `authentication` blob -- AuthorizationRequestHolder.java对象序列化后的二进制数据
+);
