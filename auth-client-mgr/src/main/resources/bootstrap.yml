@@ -5,10 +5,10 @@ spring:
   thymeleaf:
     cache: false
   rabbitmq:
-        host: localhost
-        port: 32771
-        username: user
-        password: password
+    host: localhost
+    port: 32771
+    username: user
+    password: password
   cloud:
     config:
       uri: http://config:8888

@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="auth-client-mgr" />
+        <module name="auth-client-server" />
         <module name="auth-rest-service" />
         <module name="auth-service" />
         <module name="authrestservice" />
@@ -21,6 +22,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="auth-client-mgr" target="1.8" />
+      <module name="auth-client-server" target="1.8" />
       <module name="auth-rest-server" target="1.8" />
       <module name="auth-rest-service" target="1.8" />
       <module name="auth-service" target="1.8" />

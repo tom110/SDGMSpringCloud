@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/CASclient/CAS-client.iml" filepath="$PROJECT_DIR$/CASclient/CAS-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/SDGMProject.iml" filepath="$PROJECT_DIR$/SDGMProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/auth-client-mgr/auth-client-mgr.iml" filepath="$PROJECT_DIR$/auth-client-mgr/auth-client-mgr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/auth-client-server/auth-client-server.iml" filepath="$PROJECT_DIR$/auth-client-server/auth-client-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/auth-rest-service/auth-rest-service.iml" filepath="$PROJECT_DIR$/auth-rest-service/auth-rest-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/auth-service/auth-service.iml" filepath="$PROJECT_DIR$/auth-service/auth-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/CAS-server/cas-overlay.iml" filepath="$PROJECT_DIR$/CAS-server/cas-overlay.iml" />

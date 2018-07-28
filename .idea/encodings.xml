@@ -5,10 +5,9 @@
     <file url="file://$PROJECT_DIR$/CAS-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/CASclient" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/auth-client-mgr" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/auth-rest-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/auth-client-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/auth-rest-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/auth-service" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/authrestservice" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/config" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gateway" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/monitor" charset="UTF-8" />

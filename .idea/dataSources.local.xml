@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="@localhost" uuid="d6f1c028-2d7d-4d41-91b9-708966371e2a">
-      <database-info product="Oracle" version="Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production" jdbc-version="4.0" driver-name="Oracle JDBC driver" driver-version="12.1.0.2.0">
-        <extra-name-characters>$#</extra-name-characters>
-        <identifier-quote-string>&quot;</identifier-quote-string>
-      </database-info>
-      <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
-      <secret-storage>master_key</secret-storage>
-      <user-name>system</user-name>
-      <introspection-schemas>*:*</introspection-schemas>
-    </data-source>
-    <data-source name="test@localhost" uuid="b9e2cc56-7f98-47fd-87e2-2ea87493a9dd">
+    <data-source name="mysql@localhost" uuid="e070d997-1d91-45a7-a960-562cf4f2589a">
       <database-info product="MySQL" version="5.7.18" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.45 ( Revision: 9131eefa398531c7dc98776e8a3fe839e544c5b2 )">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
@@ -19,17 +9,7 @@
       <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
-      <introspection-schemas>*:*</introspection-schemas>
-    </data-source>
-    <data-source name="udm462045153_db@udm462045153.my3w.com" uuid="8c0703b7-44ab-451d-9f75-c1a12afe4f7c">
-      <database-info product="MySQL" version="5.1.73" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.45 ( Revision: 9131eefa398531c7dc98776e8a3fe839e544c5b2 )">
-        <extra-name-characters>#@</extra-name-characters>
-        <identifier-quote-string>`</identifier-quote-string>
-      </database-info>
-      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
-      <secret-storage>master_key</secret-storage>
-      <user-name>udm462045153</user-name>
-      <introspection-schemas>*:udm462045153_db</introspection-schemas>
+      <introspection-schemas>*:mysql,sdgm</introspection-schemas>
     </data-source>
   </component>
 </project>

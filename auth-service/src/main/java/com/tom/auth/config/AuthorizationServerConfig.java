@@ -60,30 +60,13 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 //                .scopes("user_info")
 //                .autoApprove(true);
         clients
-                .jdbc(dataSource);
+                .jdbc(dataSource)
 //                .withClient("ClientId")
 //                .secret("secret")
 //                .authorizedGrantTypes("authorization_code")
 //                .scopes("user_info")
 //                .autoApprove(true)
-//                .and()
-//                .withClient("client")
-//                .secret("secret")
-//                .authorizedGrantTypes("password", "refresh_token")
-//                .scopes("read", "write")
-//                .accessTokenValiditySeconds(360000) // 1 hour
-//                .refreshTokenValiditySeconds(259200000) // 30 days
-//                .and()
-//                .withClient("svca-service")
-//                .secret("password")
-//                .authorizedGrantTypes("client_credentials", "refresh_token")
-//                .scopes("server")
-//                .autoApprove(true)
-//                .and()
-//                .withClient("svcb-service")
-//                .secret("password")
-//                .authorizedGrantTypes("client_credentials", "refresh_token")
-//                .scopes("server");
+            ;
     }
 
     @Override
@@ -95,5 +78,6 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .authenticationManager(authenticationManager)
                 .userDetailsService(userDetailsService);
     }
+
 }
 

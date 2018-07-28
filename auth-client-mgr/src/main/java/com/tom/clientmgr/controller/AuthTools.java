@@ -60,6 +60,12 @@ public class AuthTools {
     private String auth_service_port;
     @Value("${auth-service.contextPath}")
     private String auth_service_contextPath;
+    @Value("${auth-client-server.hostname}")
+    private String auth_client_server_hostname;
+    @Value("${auth-client-server.port}")
+    private String auth_client_server_port;
+    @Value("${auth-client-server.contextPath}")
+    private String auth_client_server_contextPath;
 
     @Autowired
     private OauthClientDetailsService oauthClientDetailsService;
@@ -142,16 +148,18 @@ public class AuthTools {
                                  @RequestParam("grant_type") String grant_type,
                                  @RequestParam("scope") String scope) throws Exception {
         CredentialsProvider provider = new BasicCredentialsProvider();
+//        UsernamePasswordCredentials credentials = new UsernamePasswordCredentials("client",
+//                oauthClientDetailsService.getById("client").getClient_secret());
         UsernamePasswordCredentials credentials = new UsernamePasswordCredentials("client",
-                oauthClientDetailsService.getById("client").getClient_secret());
+                "secret");
         provider.setCredentials(AuthScope.ANY, credentials);
         HttpClient httpClient = HttpClientBuilder.create().setDefaultCredentialsProvider(provider).build();
 
-        HttpPost httpMethod1 = new HttpPost("http://"+auth_service_hostname+":"+auth_service_port+"/"
-                +auth_service_contextPath+"/oauth/token");
+        HttpPost httpMethod1 = new HttpPost("http://"+auth_client_server_hostname+":"+auth_client_server_port+"/"
+                +auth_client_server_contextPath+"/oauth/token");
         List<NameValuePair> list = new ArrayList<NameValuePair>();
         list.add(new BasicNameValuePair("username", username));
-        list.add(new BasicNameValuePair("password", MD5Util.getMD5Str(password)));
+        list.add(new BasicNameValuePair("password", password));
         list.add(new BasicNameValuePair("grant_type", grant_type));
         list.add(new BasicNameValuePair("scope", scope));
 
@@ -165,12 +173,12 @@ public class AuthTools {
     public String getClientToken(@RequestParam("refreshToken") String refreshToken) throws Exception {
         CredentialsProvider provider = new BasicCredentialsProvider();
         UsernamePasswordCredentials credentials = new UsernamePasswordCredentials("client",
-                oauthClientDetailsService.getById("client").getClient_secret());
+                "secret");
         provider.setCredentials(AuthScope.ANY, credentials);
         HttpClient httpClient = HttpClientBuilder.create().setDefaultCredentialsProvider(provider).build();
 
-        HttpPost httpMethod1 = new HttpPost("http://"+auth_service_hostname+":"+auth_service_port+"/"
-                +auth_service_contextPath+"/oauth/token");
+        HttpPost httpMethod1 = new HttpPost("http://"+auth_client_server_hostname+":"+auth_client_server_port+"/"
+                +auth_client_server_contextPath+"/oauth/token");
 
         List<NameValuePair> list = new ArrayList<NameValuePair>();
         list.add(new BasicNameValuePair("grant_type", "refresh_token"));

@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: org.apereo.cas:cas-server-core-authentication-api:5.3.0-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/apereo/cas/cas-server-core-authentication-api/5.3.0-SNAPSHOT/cas-server-core-authentication-api-5.3.0-20180619.023805-57.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apereo/cas/cas-server-core-authentication-api/5.3.0-SNAPSHOT/cas-server-core-authentication-api-5.3.0-20180701.154218-85.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$MAVEN_REPOSITORY$/org/apereo/cas/cas-server-core-authentication-api/5.3.0-SNAPSHOT/cas-server-core-authentication-api-5.3.0-20180619.023805-57-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apereo/cas/cas-server-core-authentication-api/5.3.0-SNAPSHOT/cas-server-core-authentication-api-5.3.0-20180701.154218-85-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/apereo/cas/cas-server-core-authentication-api/5.3.0-SNAPSHOT/cas-server-core-authentication-api-5.3.0-20180619.023805-57-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apereo/cas/cas-server-core-authentication-api/5.3.0-SNAPSHOT/cas-server-core-authentication-api-5.3.0-20180701.154218-85-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

@@ -1,7 +1,7 @@
 var globe = new Globe();
 var docName = "地图文档";
 var QueryURL = "gdbp://MapGisLocal/钻孔自动建模-模型/sfcls/地质模型-ys";
-var IP = "172.24.145.113";
+var IP = "172.20.226.65";
 var port = "6163";
 var sceneID;
 var DEMID;
@@ -9,7 +9,7 @@ var map;
 var helpGeometry;
 var range3Dstr = "";
 var globe = new Globe();
-var zkmodelId, mxmodelId, labelId1, labelId2;
+var zkmodelId, mxmodelId,commodelId, labelId1, labelId2;
 var openflag = false, cutflag = true, floodflag = true, addModelFlag = true, pipeFlag = true,findAttrFlag=true;
 var mapId_img = 0;
 var mapId_cia = 0;
@@ -27,65 +27,67 @@ var dotarr = [];
 
 //地球载入初始化
 function init() {
+
+    // alert(window.innerHeight - 50);
+    $("#macher2").css("height", window.innerHeight - 50)
+
     globe.load();
 
     mapId_img = globe.addTianditu("img");
     mapId_cia = globe.addTianditu("cia");
     //
-    // 删除上一个标注
-    // if (labelId1 != "" || labelId2 != "") {
-    //     globe.removeLabelByName(labelId1);
-    //     globe.removeLabelByName(labelId2);
-    // }
-    //
-    // var strObj = new Bubble();
-    // strObj.text = "胶东山区";       //标注文本
-    // strObj.x = 122.177;                   //标注点X
-    // strObj.y = 37.33;                    //标注点Y
-    // strObj.z = 0;                       //标注点Z
-    // strObj.fontsize = 20;
-    // strObj.fontcolor = 0xFFFFFFFF;      //字体颜色
-    // strObj.bgColor = 0xffCDAD00;        //标注区域的背景颜色
-    // strObj.opacity = 1.0;               //气泡标注透明度
-    // strObj.width = 30;                  //气泡标注的宽
-    // strObj.height = 25;                 //气泡标注的高
-    // strObj.attribute = this.text;
-    //
-    // //调用addBubble方法添加气泡标注
-    // labelId1 = globe.addBubble(strObj);
-    //
-    // var strObj1 = new Bubble();
-    // strObj1.text = "泰安山区";       //标注文本
-    // strObj1.x = 117.182;                   //标注点X
-    // strObj1.y = 36.323;                   //标注点Y
-    // strObj1.z = 0;                       //标注点Z
-    // strObj1.fontcolor = 0xFFFFFFFF;      //字体颜色
-    // strObj1.fontsize = 20;
-    // strObj1.bgColor = 0xffCDAD00;        //标注区域的背景颜色
-    // strObj1.opacity = 1.0;               //气泡标注透明度
-    // strObj1.width = 30;                  //气泡标注的宽
-    // strObj1.height = 25;                 //气泡标注的高
-    // strObj1.attribute = this.text;
-    //
-    // //调用addBubble方法添加气泡标注
-    // labelId2 = globe.addBubble(strObj1);
-    //
-    // //拾取标注的的监听事件
-    // globe.addEventListener(EventType.PickLabel, function (attribute) {
-    //     // alert(attribute.split(":")[0]);
-    //     addMap();
-    // });
-    //
-    // globe.startPickLabel();
-    //
-    // if (labelId == "") {
-    //     alert("添加标注失败！");
-    // }
-    //
-    // if (mapId == -1) {
-    //     alert("加载地图失败！");
-    // }
-    $("#macher2").css("height", window.innerHeight - 50)
+    //删除上一个标注
+    if (labelId1 != "" || labelId2 != "") {
+        globe.removeLabelByName(labelId1);
+        globe.removeLabelByName(labelId2);
+    }
+
+    var strObj = new Bubble();
+    strObj.text = "胶东山区";       //标注文本
+    strObj.x = 122.177;                   //标注点X
+    strObj.y = 37.33;                    //标注点Y
+    strObj.z = 0;                       //标注点Z
+    strObj.fontsize = 20;
+    strObj.fontcolor = 0xFFFFFFFF;      //字体颜色
+    strObj.bgColor = 0xffCDAD00;        //标注区域的背景颜色
+    strObj.opacity = 1.0;               //气泡标注透明度
+    strObj.width = 30;                  //气泡标注的宽
+    strObj.height = 25;                 //气泡标注的高
+    strObj.attribute = this.text;
+
+    //调用addBubble方法添加气泡标注
+    labelId1 = globe.addBubble(strObj);
+
+    var strObj1 = new Bubble();
+    strObj1.text = "泰安山区";       //标注文本
+    strObj1.x = 117.182;                   //标注点X
+    strObj1.y = 36.323;                   //标注点Y
+    strObj1.z = 0;                       //标注点Z
+    strObj1.fontcolor = 0xFFFFFFFF;      //字体颜色
+    strObj1.fontsize = 20;
+    strObj1.bgColor = 0xffCDAD00;        //标注区域的背景颜色
+    strObj1.opacity = 1.0;               //气泡标注透明度
+    strObj1.width = 30;                  //气泡标注的宽
+    strObj1.height = 25;                 //气泡标注的高
+    strObj1.attribute = this.text;
+
+    //调用addBubble方法添加气泡标注
+    labelId2 = globe.addBubble(strObj1);
+
+    //拾取标注的的监听事件
+    globe.addEventListener(EventType.PickLabel, pickModels);
+
+    globe.startPickLabel();
+
+    if (labelId == "") {
+        alert("添加标注失败！");
+    }
+
+    if (mapId == -1) {
+        alert("加载地图失败！");
+    }
+
+
     // setTimeout("jump()",8000);
 
     //globe.goToSurfaceMode();
@@ -96,15 +98,24 @@ function init() {
 //     globe.jumpByPos(117.234124,37.232342,100.00,30,30,30);
 // }
 
+function pickModels() {
+    addMap();
+}
+
 //********加载模型和地层******start
 //加载模型
 function addMap() {
     globe.load();
 
-    // //删除上一个标注
-    // if (labelId1 != "" || labelId2 != "") {
-    //     globe.removeAllLabel();
-    // }
+    globe.removeEventListener(EventType.PickLabel,pickModels);
+    globe.stopPickLabel();
+
+    //删除上一个标注
+    if (labelId1 != "" || labelId2 != "") {
+        globe.removeLabelByName(labelId1);
+        globe.removeLabelByName(labelId2);
+        // globe.removeAllLabel();
+    }
 
     globe.removeAll();
     if (DEMID > 0 || DEMID) {
@@ -116,6 +127,7 @@ function addMap() {
     globe.reset();//定位到模型所在位置
     //获取被切割图层的Range3D
     range3Dstr = globe.getSceneProperty(sceneID, 0, "Range3D");//只能获取模型图层的空间范围
+    QueryURL = "gdbp://MapGisLocal/钻孔自动建模-模型/sfcls/地质模型-ys";
 }
 
 //加载钻孔
@@ -132,7 +144,9 @@ function addMap1() {
     }
 
 
-    zkmodelId = globe.appendGeomByUrl("gdbp://MapGisLocal/钻孔自动建模-模型/sfcls/钻孔模型-ys", 0, IP, port)
+    zkmodelId = globe.appendGeomByUrl("gdbp://MapGisLocal/钻孔自动建模-模型/sfcls/钻孔模型-ys", 0, IP, port);
+    commodelId=zkmodelId;
+    QueryURL="gdbp://MapGisLocal/钻孔自动建模-模型/sfcls/钻孔模型-ys";
     globe.reset();
 }
 
@@ -149,7 +163,9 @@ function addMap2() {
         removeCut();
         globe.removeAllDoc();
     }
-    mxmodelId = globe.appendGeomByUrl("gdbp://MapGisLocal/钻孔自动建模-模型/sfcls/地质模型-ys", 0, IP, port)
+    mxmodelId = globe.appendGeomByUrl("gdbp://MapGisLocal/钻孔自动建模-模型/sfcls/地质模型-ys", 0, IP, port);
+    commodelId=mxmodelId;
+    QueryURL="gdbp://MapGisLocal/钻孔自动建模-模型/sfcls/地质模型-ys";
     globe.reset();
 }
 
@@ -200,7 +216,8 @@ function showFirst() {
         globe.removeAllDoc();
     }
     alert(first)
-    globe.appendGeomByUrl("gdbp://MapGisLocal/钻孔自动建模-模型/sfcls/地质模型_" + first, 0, IP, port);
+    commodelId= globe.appendGeomByUrl("gdbp://MapGisLocal/钻孔自动建模-模型/sfcls/地质模型_" + first, 0, IP, port);
+    QueryURL="gdbp://MapGisLocal/钻孔自动建模-模型/sfcls/地质模型_" + first;
     globe.reset();
 }
 
@@ -217,7 +234,8 @@ function showSecond() {
         globe.removeAllDoc();
     }
     alert(second);
-    globe.appendGeomByUrl("gdbp://MapGisLocal/钻孔自动建模-模型/sfcls/地质模型_" + second, 0, IP, port);
+    commodelId= globe.appendGeomByUrl("gdbp://MapGisLocal/钻孔自动建模-模型/sfcls/地质模型_" + second, 0, IP, port);
+    QueryURL="gdbp://MapGisLocal/钻孔自动建模-模型/sfcls/地质模型_" + second;
     globe.reset();
 
 }
@@ -376,7 +394,8 @@ function showPipeFrist() {
         globe.removeAllDoc();
     }
     alert(pipeFirst)
-    globe.appendGeomByUrl("gdbp://MapGisLocal/钻孔自动建模-模型/sfcls/地质模型_" + pipeFirst, 0, IP, port);
+    commodelId= globe.appendGeomByUrl("gdbp://MapGisLocal/钻孔自动建模-模型/sfcls/地质模型_" + pipeFirst, 0, IP, port);
+    QueryURL="gdbp://MapGisLocal/钻孔自动建模-模型/sfcls/地质模型_" + pipeFirst;
     globe.reset();
 }
 
@@ -393,7 +412,8 @@ function showPipeSecond() {
         globe.removeAllDoc();
     }
     alert(pipeSecond)
-    globe.appendGeomByUrl("gdbp://MapGisLocal/钻孔自动建模-模型/sfcls/地质模型_" + pipeSecond, 0, IP, port);
+    commodelId= globe.appendGeomByUrl("gdbp://MapGisLocal/钻孔自动建模-模型/sfcls/地质模型_" + pipeSecond, 0, IP, port);
+    QueryURL="gdbp://MapGisLocal/钻孔自动建模-模型/sfcls/地质模型_" + pipeSecond;
     globe.reset();
 }
 
@@ -516,8 +536,6 @@ function addGraphic() {
 
 
 
-
-
 //得到uuid
 function getUuid() {
     var len = 32;//32长度
@@ -540,13 +558,6 @@ function getUuid() {
     }
     return uuid.join('');
 }
-
-
-
-
-
-
-
 
 
 
@@ -593,7 +604,8 @@ function addcutModel() {
     if (sceneID > 0 || DEMID) {
         globe.removeAllDoc();
     }
-    globe.appendGeomByUrl("gdbp://MapGisLocal/钻孔自动建模-模型/sfcls/b1", 0, IP, port);
+    commodelId= globe.appendGeomByUrl("gdbp://MapGisLocal/钻孔自动建模-模型/sfcls/b1", 0, IP, port);
+    QueryURL="gdbp://MapGisLocal/钻孔自动建模-模型/sfcls/b1";
     globe.reset();
 }
 
@@ -932,7 +944,7 @@ function queryPolygonsCallback_modle(data) {
 
 //高亮显示
 function sparkModel(objid) {
-    var info = "LayerIndex:0,ObjID:" + objid + ",SddHandle:" + sceneID;
+    var info = "LayerIndex:"+"0"+",ObjID:" + objid + ",SddHandle:" + sceneID;
     globe.startModelDiplay(info, 1, true);
 }
 
@@ -949,6 +961,7 @@ function stopPickModelReady() {
 
 
 //******开启模型查询********start
+
 function PickModel() {
     alert("开启全景模型查询");
     //移除鼠标事件
@@ -1000,3 +1013,41 @@ function stopPickModel_M() {
 }
 
 //***********开启地层查询end********end
+
+function loadMap() {
+    var queryParam=new G3DDocQuery();
+    queryParam.pageCount='1000';
+    queryParam.gdbp=encodeURI(URL);
+    queryParam.where='';
+    queryParam.serverIp=ip;
+    queryParam.serverPort=port;
+    queryParam.structs='{"IncludeAttribute":true,"IncludeGeometry":false,"IncludeWebGraphic":false}';
+
+    if(globe != null){
+        this.globle.queryG3DFeature(queryParam,queryPolygonsCallback,null,'post');
+    }
+}
+function queryPolygonsCallback(data) {
+    for(var i=0;i<data.TotalCount;i++){
+        modelID=globe.appendGeomByUrl(URL,ip,port,data.SFEleArray[i].FID);
+        var model=new Object();
+        model.modelID=modelID;
+        model.FID=data.SFEleArray[i].FID;
+        models.push(model);
+
+        if(modelID > 0){
+            globe.reset();
+        }else{
+            alert("添加失败");
+        }
+    }
+}
+
+function flash() {
+    for(var i=0;i<models.length;i++){
+        if(models[i].FID==5){
+            var info="LayerIndex:0,ObjID:0"+"SddHandle:"+models[i].modelID;
+            globe.startModelDiplay(info,EnumModelDispType.Flash,true);
+        }
+    }
+}

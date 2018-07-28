@@ -20,6 +20,7 @@
         <module>auth-client-mgr</module>
         <module>CASclient</module>
         <module>auth-rest-service</module>
+        <module>auth-client-server</module>
     </modules>
 
     <parent>
