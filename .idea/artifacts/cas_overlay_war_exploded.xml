@@ -193,7 +193,7 @@
           <element id="library" level="project" name="Maven: com.github.stephenc.jcip:jcip-annotations:1.0-1" />
           <element id="library" level="project" name="Maven: com.nimbusds:oauth2-oidc-sdk:5.62" />
           <element id="library" level="project" name="Maven: javax.mail:mail:1.4.7" />
-          <element id="library" level="project" name="Maven: com.nimbusds:lang-tag:1.4.3" />
+          <element id="library" level="project" name="Maven: com.nimbusds:lang-tag:1.4.4" />
           <element id="library" level="project" name="Maven: net.minidev:json-smart:2.3" />
           <element id="library" level="project" name="Maven: net.minidev:accessors-smart:1.2" />
           <element id="library" level="project" name="Maven: org.ow2.asm:asm:5.0.4" />

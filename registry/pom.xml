@@ -52,7 +52,7 @@
                         </execution>
                     </executions>
                     <configuration>
-                        <imageName>${docker.image.prefix}/eureka</imageName>
+                        <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
                         <dockerDirectory>src/main/docker</dockerDirectory>
                         <resources>
                             <resource>

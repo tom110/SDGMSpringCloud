@@ -2,7 +2,7 @@ spring:
   application:
     name: zipkin
   rabbitmq:
-      host: localhost
+      host: rabbitmq
       port: 32771
       username: user
       password: password

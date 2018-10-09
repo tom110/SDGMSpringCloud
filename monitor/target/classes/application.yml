@@ -24,7 +24,7 @@ spring:
   application:
     name: monitor
   rabbitmq:
-      host: localhost
+      host: rabbitmq
       port: 32771
       username: user
       password: password

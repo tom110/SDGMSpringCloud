@@ -18,3 +18,11 @@ docker run --name mysql -v mysql-data:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_
 ```
 mvn clean package -Dmanven.test.skip=true docker:build
 ```
+如果是运行远程的一个加密docker server，需要如下操作：
+1. 设置环境变量`DOCKER_HOST`为`tcp://<server_IP>:2376`，设置`DOCKER_TLS_VERIFY`为`1`
+2. 把私钥`ca.pem`、`cert.pem`、`key.pem`、`ca-key.pem`复制到`<userhome>/.docker`目录
+3. 运行
+```
+mvn clean package -Dmanven.test.skip=true docker:build
+```
+==注意，如果dockerFile里的镜像是在server构建的，所以镜像连接要使用对应server的连接==
