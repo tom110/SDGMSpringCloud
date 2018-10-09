@@ -4,6 +4,9 @@
 # Log file
 *.log
 
+# .gitignore for maven
+target/
+
 # BlueJ files
 *.ctxt
 
@@ -24,4 +27,3 @@
 hs_err_pid*
 
 .idea/
-*/target/
